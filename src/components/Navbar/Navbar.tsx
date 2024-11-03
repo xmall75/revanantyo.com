@@ -1,9 +1,7 @@
 import { Box, Flex } from "@chakra-ui/react";
-import Image from "next/image";
-import Link from "next/link";
 
-import { listMenu } from "@/constants/list_menu";
-
+import NavbarAvatar from "./NavbarAvatar";
+import NavbarMenu from "./NavbarMenu";
 import ToggleThemeButton from "../Button/ToggleThemeButton";
 
 const Navbar = () => {
@@ -34,43 +32,8 @@ const Navbar = () => {
         justifyContent="space-between"
         justifyItems="center"
       >
-        <Box
-          my="auto"
-          boxSize={{
-            base: 20,
-            sm: 30,
-            lg: 45,
-          }}
-          position="relative"
-          overflow="hidden"
-          borderRadius="full"
-        >
-          <Image
-            src="/images/avatar_navbar.png"
-            alt="Revanantyo Dwigantara"
-            fill
-            className="scale-x-[-1]"
-          />
-        </Box>
-        <Flex
-          my="auto"
-          display={{
-            base: "none",
-            md: "flex",
-          }}
-          gap={{
-            md: 5,
-            lg: 7,
-          }}
-        >
-          {listMenu.map((value, index) => {
-            return (
-              <Box key={index} fontWeight="semibold" fontSize="sm">
-                <Link href={value.path}>{value.title}</Link>
-              </Box>
-            );
-          })}
-        </Flex>
+        <NavbarAvatar />
+        <NavbarMenu />
         <Box
           my="auto"
           display={{
