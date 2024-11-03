@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { cookies } from "next/headers";
+import { Plus_Jakarta_Sans } from "next/font/google";
 
 import "./globals.css";
 
+import useGetColorMode from "@/hooks/useGetColorMode";
+
+import Navbar from "@/components/Navbar/Navbar";
+
 import { Providers } from "./providers";
 
-const inter = Inter({ subsets: ["latin"] });
+const plusJakarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Revanantyo Dwigantara",
@@ -19,22 +22,17 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const cookieStore = cookies();
-  const defaultTheme = "dark";
-  const uiColorMode =
-    (cookieStore.get("chakra-ui-color-mode")?.value as "light" | "dark") ||
-    defaultTheme;
+  const colorMode = useGetColorMode();
 
   return (
-    <html
-      lang="en"
-      data-theme={uiColorMode}
-      style={{ colorScheme: uiColorMode }}
-    >
+    <html lang="en" data-theme={colorMode} style={{ colorScheme: colorMode }}>
       <body
-        className={`${inter.className} overflow-x-hidden chakra-ui-${uiColorMode}`}
+        className={`${plusJakarta.className} overflow-x-hidden chakra-ui-${colorMode}`}
       >
-        <Providers colorMode={uiColorMode}>{children}</Providers>
+        <Providers colorMode={colorMode}>
+          <Navbar />
+          {children}
+        </Providers>
       </body>
     </html>
   );
