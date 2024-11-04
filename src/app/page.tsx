@@ -1,5 +1,11 @@
 import { Container } from "@chakra-ui/react";
 
+import Hero from "@/components/Home/Hero/Hero";
+
 export default function Home() {
-  return <Container height={3000}>test</Container>;
+  return (
+    <Container>
+      <Hero />
+    </Container>
+  );
 }

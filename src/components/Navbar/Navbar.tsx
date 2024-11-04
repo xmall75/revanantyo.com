@@ -2,6 +2,8 @@
 
 import { Box, Flex, useColorModeValue } from "@chakra-ui/react";
 
+import { gradientBlue, gradientBrown } from "@/constants/gradient_color";
+
 import NavbarAvatar from "./NavbarAvatar";
 import NavbarMenu from "./NavbarMenu";
 import NavbarMenuMobile from "./NavbarMenuMobile";
@@ -18,10 +20,7 @@ const Navbar = () => {
       position="fixed"
       zIndex={100}
       backgroundColor="background"
-      backgroundImage={useColorModeValue(
-        "linear-gradient(to right, brownPrimary.400, brownPrimary.700)",
-        "linear-gradient(to right, bluePrimary.200, bluePrimary.700)",
-      )}
+      backgroundImage={useColorModeValue(gradientBrown, gradientBlue)}
       backgroundSize="100% 6px"
       backgroundPosition="top"
       backgroundRepeat="no-repeat"
