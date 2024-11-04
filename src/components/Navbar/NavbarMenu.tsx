@@ -11,7 +11,7 @@ import {
 import { ListMenu } from "@/constants/list_menu";
 
 const NavbarMenu = (props: HTMLChakraProps<"div">) => {
-  const MenuColor = useColorModeValue("dark.100", "dark.300");
+  const MenuColor = useColorModeValue("dark.200", "dark.300");
 
   return (
     <Flex my="auto" {...props}>
@@ -31,6 +31,7 @@ const NavbarMenu = (props: HTMLChakraProps<"div">) => {
                 color: MenuColor,
                 textDecoration: "none",
               }}
+              transition="color 0.1s ease-out!important"
             >
               {value.title}
             </Link>
