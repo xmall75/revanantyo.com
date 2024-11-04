@@ -1,14 +1,16 @@
-export const listMenu = [
+import { AppRoute } from "./app_route";
+
+export const ListMenu = [
   {
     title: "Home",
-    path: "/",
+    path: AppRoute.index,
   },
   {
     title: "Experience",
-    path: "/#experience",
+    path: AppRoute.experience,
   },
   {
     title: "Contact",
-    path: "/#contact",
+    path: AppRoute.contact,
   },
 ];

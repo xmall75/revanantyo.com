@@ -1,24 +1,40 @@
-import { Box, Flex, Link } from "@chakra-ui/react";
+"use client";
 
-import { listMenu } from "@/constants/list_menu";
+import {
+  Box,
+  Flex,
+  HTMLChakraProps,
+  Link,
+  useColorModeValue,
+} from "@chakra-ui/react";
 
-const NavbarMenu = () => {
+import { ListMenu } from "@/constants/list_menu";
+
+const NavbarMenu = (props: HTMLChakraProps<"div">) => {
+  const MenuColor = useColorModeValue("dark.200", "dark.300");
+
   return (
-    <Flex
-      my="auto"
-      display={{
-        base: "none",
-        md: "flex",
-      }}
-      gap={{
-        md: 5,
-        lg: 7,
-      }}
-    >
-      {listMenu.map((value, index) => {
+    <Flex my="auto" {...props}>
+      {ListMenu.map((value, index) => {
         return (
-          <Box key={index} fontWeight="semibold" fontSize="sm">
-            <Link href={value.path}>{value.title}</Link>
+          <Box
+            key={index}
+            fontWeight="semibold"
+            fontSize={{
+              base: "md",
+              lg: "sm",
+            }}
+          >
+            <Link
+              href={value.path}
+              _hover={{
+                color: MenuColor,
+                textDecoration: "none",
+              }}
+              transition="color 0.1s ease-out!important"
+            >
+              {value.title}
+            </Link>
           </Box>
         );
       })}

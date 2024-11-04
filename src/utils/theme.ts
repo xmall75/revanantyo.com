@@ -1,12 +1,16 @@
-import { extendTheme, ThemeConfig } from "@chakra-ui/react";
+import { extendTheme, StyleFunctionProps, ThemeConfig } from "@chakra-ui/react";
 
-const theme = (colorMode: "light" | "dark") => {
+const theme = (colorMode: StyleFunctionProps["colorMode"]) => {
   const config: ThemeConfig = {
     initialColorMode: colorMode,
     useSystemColorMode: false,
   };
 
   const colors = {
+    background: {
+      _dark: "#161513",
+      _light: "#FFFFFF",
+    },
     dark: {
       50: "#e6e6e6",
       100: "#bfbfbf",
@@ -84,12 +88,10 @@ const theme = (colorMode: "light" | "dark") => {
   const styles = {
     global: () => ({
       body: {
-        _dark: {
-          bg: "#161513",
-        },
-        _light: {
-          bg: "#FFFFFF",
-        },
+        bg: "background",
+      },
+      "html *": {
+        transition: "color, background-color 0.2s ease-out!important",
       },
     }),
   };
