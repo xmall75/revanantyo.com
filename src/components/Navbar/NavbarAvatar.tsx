@@ -1,26 +1,21 @@
-import { Box } from "@chakra-ui/react";
+import { LinkBox, LinkOverlay } from "@chakra-ui/react";
 import Image from "next/image";
+
+import { AppRoute } from "@/constants/app_route";
 
 const NavbarAvatar = () => {
   return (
-    <Box
+    <LinkBox
       my="auto"
-      boxSize={{
-        base: 20,
-        sm: 30,
-        lg: 45,
-      }}
+      boxSize={45}
       position="relative"
       overflow="hidden"
       borderRadius="full"
     >
-      <Image
-        src="/images/avatar_navbar.png"
-        alt="Revanantyo Dwigantara"
-        fill
-        className="scale-x-[-1]"
-      />
-    </Box>
+      <LinkOverlay href={AppRoute.index}>
+        <Image src="/images/logo.svg" alt="Revanantyo Dwigantara" fill />
+      </LinkOverlay>
+    </LinkBox>
   );
 };
 
