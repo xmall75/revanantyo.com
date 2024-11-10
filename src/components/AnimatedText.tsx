@@ -8,12 +8,16 @@ interface Props extends TextProps {
   text: string;
   delay?: number;
   duration?: number;
+  delayToHidden?: number;
+  delayToVisible?: number;
 }
 
 const AnimatedText: FC<Props> = ({
   text,
   delay = 0,
   duration = 0.05,
+  delayToHidden = 7000,
+  delayToVisible = 1500,
   ...props
 }: Props) => {
   const [loop, setLoop] = useState(true);
@@ -52,11 +56,11 @@ const AnimatedText: FC<Props> = ({
 
   useEffect(() => {
     if (loop) {
-      setTimeout(() => setLoop(false), 7000);
+      setTimeout(() => setLoop(false), delayToHidden);
     } else {
-      setTimeout(() => setLoop(true), 3000);
+      setTimeout(() => setLoop(true), delayToVisible);
     }
-  }, [loop]);
+  }, [loop, delayToHidden, delayToVisible]);
 
   return (
     <Text
