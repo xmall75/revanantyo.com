@@ -3,7 +3,7 @@
 import { Box, Flex, useColorModeValue } from "@chakra-ui/react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-import { gradientBlue, gradientBrown } from "@/constants/gradient_color";
+import { gradientBrown, gradientMagenta } from "@/constants/gradient_color";
 
 import NavbarAvatar from "./NavbarAvatar";
 import NavbarMenu from "./NavbarMenu";
@@ -15,17 +15,17 @@ const Navbar = () => {
 
   const backgroundSize = useTransform(
     scrollY,
-    [0, 200],
+    [0, 150],
     ["100% 0px", "100% 8px"],
   );
 
   const backgroundColor = useTransform(
     scrollY,
-    [0, 200],
+    [0, 150],
     ["rgba(0, 0, 0, 0)", useColorModeValue("#FFFFFF", "#161513")],
   );
 
-  const backgroundImage = useColorModeValue(gradientBrown, gradientBlue);
+  const backgroundImage = useColorModeValue(gradientBrown, gradientMagenta);
 
   return (
     <Box

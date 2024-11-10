@@ -17,6 +17,9 @@ const NavbarAvatar = () => {
         height="full"
         href={AppRoute.index}
         position="absolute"
+        _light={{
+          filter: "invert(100%)",
+        }}
       >
         <Image
           priority
