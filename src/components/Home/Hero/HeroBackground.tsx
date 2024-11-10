@@ -13,7 +13,7 @@ const HeroBackground = () => {
   );
 
   const heroBackground = useColorModeValue(
-    "",
+    "/background/hero/light-hero.webm",
     "/background/hero/dark-hero.webm",
   );
 
@@ -27,6 +27,7 @@ const HeroBackground = () => {
         width="100%"
         height="200vh"
         position="absolute"
+        zIndex={0}
       />
       <Box
         as="video"
