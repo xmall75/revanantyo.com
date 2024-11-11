@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Inter } from "next/font/google";
 
 import "./globals.css";
 
@@ -9,7 +9,7 @@ import Navbar from "@/components/Navbar/Navbar";
 
 import { Providers } from "./providers";
 
-const plusJakarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Revanantyo Dwigantara",
@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme={colorMode} style={{ colorScheme: colorMode }}>
       <body
-        className={`${plusJakarta.className} overflow-x-hidden chakra-ui-${colorMode}`}
+        className={`${inter.className} overflow-x-hidden chakra-ui-${colorMode}`}
       >
         <Providers colorMode={colorMode}>
           <Navbar />

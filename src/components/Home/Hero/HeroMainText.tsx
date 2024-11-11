@@ -20,7 +20,7 @@ const HeroMainText = () => {
       >
         Fullstack Engineer
       </Text>
-      <Text
+      {/* <Text
         mt={{
           base: 12,
           lg: 10,
@@ -40,7 +40,7 @@ const HeroMainText = () => {
         specializing in frontend development. My expertise lies in creating
         seamless, responsive, and user-friendly web applications using React and
         Next.js.
-      </Text>
+      </Text> */}
     </Box>
   );
 };

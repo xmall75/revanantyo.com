@@ -18,16 +18,14 @@ const RotatingText = ({ words }: { words: string[] }) => {
   }, [words.length]);
   return (
     <Box
-      mb={10}
-      fontSize={{ base: "4xl", sm: "5xl", md: "6xl" }}
+      fontSize={{ base: "6xl", sm: "5xl", md: "6xl" }}
       textAlign="center"
       fontWeight="bold"
       letterSpacing="tighter"
       lineHeight={{ md: "4rem" }}
       display="flex"
-      alignItems="end"
+      alignItems="center"
       justifyContent="center"
-      height="30%"
       mx="auto"
       gap={5}
     >

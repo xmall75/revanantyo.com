@@ -2,6 +2,7 @@ import { Box } from "@chakra-ui/react";
 
 import RotatingText from "@/components/RotatingText";
 
+import HeroMainSocial from "./HeroMainSocial";
 import HeroMainText from "./HeroMainText";
 
 const HeroMainContent = () => {
@@ -15,14 +16,16 @@ const HeroMainContent = () => {
         md: "80%",
         lg: "70%",
       }}
-      height="50%"
+      height="full"
       display="flex"
       flexDirection="column"
       justifyItems="center"
-      gap={5}
+      justifyContent="center"
+      gap={16}
     >
       <RotatingText words={["Develop", "Code", "Build"]} />
       <HeroMainText />
+      <HeroMainSocial />
     </Box>
   );
 };
