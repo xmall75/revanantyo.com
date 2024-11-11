@@ -1,6 +1,9 @@
 "use client";
 
 import { Box, Flex, useColorModeValue } from "@chakra-ui/react";
+import { motion, useScroll, useTransform } from "framer-motion";
+
+import { gradientBrown, gradientMagenta } from "@/constants/gradient_color";
 
 import NavbarAvatar from "./NavbarAvatar";
 import NavbarMenu from "./NavbarMenu";
@@ -8,8 +11,25 @@ import NavbarMenuMobile from "./NavbarMenuMobile";
 import ToggleThemeButton from "../Button/ToggleThemeButton";
 
 const Navbar = () => {
+  const { scrollY } = useScroll();
+
+  const backgroundSize = useTransform(
+    scrollY,
+    [0, 150],
+    ["100% 0px", "100% 8px"],
+  );
+
+  const backgroundColor = useTransform(
+    scrollY,
+    [0, 150],
+    ["rgba(0, 0, 0, 0)", useColorModeValue("#FFFFFF", "#161513")],
+  );
+
+  const backgroundImage = useColorModeValue(gradientBrown, gradientMagenta);
+
   return (
     <Box
+      as={motion.div}
       height={{
         base: 75,
         lg: 85,
@@ -17,14 +37,15 @@ const Navbar = () => {
       width="100%"
       position="fixed"
       zIndex={100}
-      backgroundColor="background"
-      backgroundImage={useColorModeValue(
-        "linear-gradient(to right, brownPrimary.400, brownPrimary.700)",
-        "linear-gradient(to right, bluePrimary.200, bluePrimary.700)",
-      )}
-      backgroundSize="100% 6px"
+      backgroundColor="transparent"
+      backgroundImage={backgroundImage}
+      style={{
+        backgroundSize: backgroundSize,
+        backgroundColor: backgroundColor,
+      }}
       backgroundPosition="top"
       backgroundRepeat="no-repeat"
+      transition="all 0.2s ease-out!important"
     >
       <Flex
         mx="auto"

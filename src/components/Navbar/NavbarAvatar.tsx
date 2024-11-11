@@ -7,13 +7,26 @@ const NavbarAvatar = () => {
   return (
     <LinkBox
       my="auto"
-      boxSize={45}
       position="relative"
+      boxSize={45}
       overflow="hidden"
       borderRadius="full"
     >
-      <LinkOverlay href={AppRoute.index}>
-        <Image src="/images/logo.svg" alt="Revanantyo Dwigantara" fill />
+      <LinkOverlay
+        width="full"
+        height="full"
+        href={AppRoute.index}
+        position="absolute"
+        _light={{
+          filter: "invert(100%)",
+        }}
+      >
+        <Image
+          priority
+          src="/images/logo.svg"
+          alt="Revanantyo Dwigantara"
+          fill
+        />
       </LinkOverlay>
     </LinkBox>
   );

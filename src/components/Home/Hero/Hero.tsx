@@ -1,18 +1,12 @@
-import { Container } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
+
+import HeroMainContent from "./HeroMainContent";
 
 const Hero = () => {
   return (
-    <Container
-      width={{
-        base: "95%",
-        sm: "90%",
-        md: "80%",
-        lg: "70%",
-      }}
-      border="1px solid red"
-    >
-      Test
-    </Container>
+    <Box position="relative" width="100%" height="100vh">
+      <HeroMainContent />
+    </Box>
   );
 };
 

@@ -83,6 +83,30 @@ const theme = (colorMode: StyleFunctionProps["colorMode"]) => {
       800: "#082c47",
       900: "#04141a",
     },
+    blueAccent: {
+      50: "#e5d9ff",
+      100: "#c5aaff",
+      200: "#9e77ff",
+      300: "#7b55ff",
+      400: "#5a36ff",
+      500: "#4833FF",
+      600: "#3a2ecc",
+      700: "#2e2499",
+      800: "#231966",
+      900: "#170f33",
+    },
+    pinkPrimary: {
+      50: "#ffd3e8",
+      100: "#ffaccf",
+      200: "#ff7eb3",
+      300: "#ff57a0",
+      400: "#ff3495",
+      500: "#FF6EB3",
+      600: "#cc5b91",
+      700: "#99476f",
+      800: "#66334d",
+      900: "#331a26",
+    },
   };
 
   const styles = {

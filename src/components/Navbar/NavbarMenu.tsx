@@ -11,24 +11,20 @@ import {
 import { ListMenu } from "@/constants/list_menu";
 
 const NavbarMenu = (props: HTMLChakraProps<"div">) => {
-  const MenuColor = useColorModeValue("dark.200", "dark.300");
+  const menuColorHover = useColorModeValue(
+    "brownPrimary.700",
+    "blueAccent.500",
+  );
 
   return (
-    <Flex my="auto" {...props}>
+    <Flex my="auto" justifyItems="center" {...props}>
       {ListMenu.map((value, index) => {
         return (
-          <Box
-            key={index}
-            fontWeight="semibold"
-            fontSize={{
-              base: "md",
-              lg: "sm",
-            }}
-          >
+          <Box key={index} fontWeight="semibold" fontSize="md">
             <Link
               href={value.path}
               _hover={{
-                color: MenuColor,
+                color: menuColorHover,
                 textDecoration: "none",
               }}
               transition="color 0.1s ease-out!important"
