@@ -19,12 +19,6 @@ const Navbar = () => {
     ["100% 0px", "100% 8px"],
   );
 
-  const backgroundColor = useTransform(
-    scrollY,
-    [0, 150],
-    ["rgba(0, 0, 0, 0)", useColorModeValue("#FFFFFF", "#161513")],
-  );
-
   const backgroundImage = useColorModeValue(gradientBrown, gradientMagenta);
 
   return (
@@ -37,11 +31,10 @@ const Navbar = () => {
       width="100%"
       position="fixed"
       zIndex={100}
-      backgroundColor="transparent"
+      backgroundColor="background"
       backgroundImage={backgroundImage}
       style={{
         backgroundSize: backgroundSize,
-        backgroundColor: backgroundColor,
       }}
       backgroundPosition="top"
       backgroundRepeat="no-repeat"
