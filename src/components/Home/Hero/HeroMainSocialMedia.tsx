@@ -9,8 +9,22 @@ const HeroMainSocialMedia = () => {
 
   return (
     <Box display="flex" justifyContent="center" alignItems="center" gap={6}>
-      <Divider borderWidth={2} />
-      <Grid templateColumns="repeat(4, 1fr)" gap={4}>
+      <Divider
+        borderWidth={2}
+        display={{
+          base: "none",
+          sm: "inline",
+        }}
+      />
+      <Grid
+        templateColumns="repeat(3, 1fr)"
+        justifyContent="center"
+        alignContent="center"
+        gap={{
+          base: 3,
+          sm: 4,
+        }}
+      >
         {SocialMedia.map((social, key) => {
           return (
             <Box

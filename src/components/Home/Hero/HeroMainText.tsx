@@ -13,17 +13,21 @@ const HeroMainText = () => {
         <Text
           as="span"
           lineHeight="80%"
-          p={0}
           fontWeight="bold"
           fontSize={{
-            base: "2xl",
-            lg: "9xl",
+            base: "5xl",
+            sm: "6xl",
+            md: "8xl",
+            xl: "9xl",
           }}
           bgGradient={textColor}
           backgroundClip="text"
-          ml={-2}
+          ml={{
+            base: -1,
+            lg: -2,
+          }}
         >
-          FULLSTACK
+          SOFTWARE
         </Text>
       </Box>
       <Box
@@ -33,7 +37,13 @@ const HeroMainText = () => {
         zIndex={1}
       >
         <Box
-          fontSize="4xl"
+          fontSize={{
+            base: "sm",
+            sm: "lg",
+            md: "xl",
+            lg: "2xl",
+            xl: "4xl",
+          }}
           fontWeight="semibold"
           display="flex"
           flexDirection="column"
@@ -46,8 +56,10 @@ const HeroMainText = () => {
           textAlign="right"
           fontWeight="bold"
           fontSize={{
-            base: "2xl",
-            lg: "9xl",
+            base: "5xl",
+            sm: "6xl",
+            md: "8xl",
+            xl: "9xl",
           }}
         >
           ENGINEER
