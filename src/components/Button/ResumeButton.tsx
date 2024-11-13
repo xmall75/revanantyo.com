@@ -4,7 +4,7 @@ import { Box, useColorModeValue } from "@chakra-ui/react";
 
 import { AppRoute } from "@/constants/app_route";
 
-const HeroMainSocial = () => {
+const ResumeButton = () => {
   const buttonColorHover = useColorModeValue(
     "brownPrimary.700",
     "blueAccent.500",
@@ -46,4 +46,4 @@ const HeroMainSocial = () => {
   );
 };
 
-export default HeroMainSocial;
+export default ResumeButton;

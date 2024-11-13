@@ -1,32 +1,45 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 
-import RotatingText from "@/components/RotatingText";
-
-import HeroMainSocial from "./HeroMainSocial";
+import HeroMainSocialMedia from "./HeroMainSocialMedia";
 import HeroMainText from "./HeroMainText";
 
 const HeroMainContent = () => {
   return (
-    <Box
-      mx="auto"
-      my="auto"
-      width={{
-        base: "92%",
-        sm: "90%",
-        md: "80%",
-        lg: "70%",
-      }}
-      height="full"
-      display="flex"
-      flexDirection="column"
-      justifyItems="center"
-      justifyContent="center"
-      gap={16}
-    >
-      <RotatingText words={["Develop", "Code", "Build"]} />
-      <HeroMainText />
-      <HeroMainSocial />
-    </Box>
+    <>
+      <Box
+        position="relative"
+        width="full"
+        height="full"
+        display="flex"
+        flexDirection="column"
+        justifyItems="center"
+        justifyContent="center"
+        gap={{
+          base: 6,
+          lg: 10,
+        }}
+      >
+        <HeroMainText />
+        <HeroMainSocialMedia />
+      </Box>
+      <Text
+        mt={{
+          base: 4,
+          sm: 0,
+        }}
+        width="full"
+        fontSize={{
+          base: "xs",
+          lg: "sm",
+        }}
+        textAlign={{
+          base: "center",
+          sm: "left",
+        }}
+      >
+        Transforming ideas into realities
+      </Text>
+    </>
   );
 };
 

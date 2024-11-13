@@ -4,7 +4,15 @@ import HeroMainContent from "./HeroMainContent";
 
 const Hero = () => {
   return (
-    <Box position="relative" width="100%" height="100vh">
+    <Box
+      display="flex"
+      flexDirection="column"
+      position="relative"
+      width="full"
+      minHeight="100vh"
+      justifyContent="center"
+      alignItems="center"
+    >
       <HeroMainContent />
     </Box>
   );
