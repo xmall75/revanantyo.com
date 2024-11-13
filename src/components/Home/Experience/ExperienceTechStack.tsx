@@ -8,10 +8,7 @@ const ExperienceTechStack = () => {
       display="flex"
       position="relative"
       width="full"
-      height={{
-        base: 250,
-        lg: 250,
-      }}
+      height={250}
       justifyContent="center"
       alignItems="center"
     >
@@ -28,7 +25,12 @@ const ExperienceTechStack = () => {
           md: "9xl",
         }}
         fontWeight="semibold"
-        lineHeight="90%"
+        lineHeight={{
+          base: "100%",
+          sm: "normal",
+          md: "90%",
+          lg: "95%",
+        }}
         opacity={0.1}
         zIndex={-1}
       >
