@@ -1,47 +1,59 @@
-import { Box, Text } from "@chakra-ui/react";
+"use client";
+
+import { Box, Text, useColorModeValue } from "@chakra-ui/react";
+
+import { gradientBrown, gradientMagenta } from "@/constants/gradient_color";
 
 const HeroMainText = () => {
+  const textColor = useColorModeValue(gradientBrown, gradientMagenta);
+
   return (
-    <Box textAlign="center" mx="auto" zIndex={1}>
-      <Text
-        fontWeight="bold"
-        fontSize={{
-          base: "2xl",
-          lg: "4xl",
-        }}
+    <>
+      <Box zIndex={1}>
+        <Text
+          as="span"
+          lineHeight="80%"
+          p={0}
+          fontWeight="bold"
+          fontSize={{
+            base: "2xl",
+            lg: "9xl",
+          }}
+          bgGradient={textColor}
+          backgroundClip="text"
+          ml={-2}
+        >
+          FULLSTACK
+        </Text>
+      </Box>
+      <Box
+        display="inline-flex"
+        justifyContent="space-between"
+        alignItems="center"
+        zIndex={1}
       >
-        Revanantyo Dwigantara
-      </Text>
-      <Text
-        fontSize={{
-          base: "lg",
-          lg: "xl",
-        }}
-      >
-        Fullstack Engineer
-      </Text>
-      {/* <Text
-        mt={{
-          base: 12,
-          lg: 10,
-        }}
-        fontSize={{
-          base: "sm",
-          lg: "md",
-        }}
-        maxWidth={{
-          base: "85%",
-          lg: "50%",
-        }}
-        mx="auto"
-        opacity={0.7}
-      >
-        I am a full-stack software engineer with over 1 year of experience,
-        specializing in frontend development. My expertise lies in creating
-        seamless, responsive, and user-friendly web applications using React and
-        Next.js.
-      </Text> */}
-    </Box>
+        <Box
+          fontSize="4xl"
+          fontWeight="semibold"
+          display="flex"
+          flexDirection="column"
+        >
+          <Text>REVANANTYO</Text>
+          <Text>DWIGANTARA</Text>
+        </Box>
+        <Text
+          lineHeight="80%"
+          textAlign="right"
+          fontWeight="bold"
+          fontSize={{
+            base: "2xl",
+            lg: "9xl",
+          }}
+        >
+          ENGINEER
+        </Text>
+      </Box>
+    </>
   );
 };
 
