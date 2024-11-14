@@ -43,7 +43,7 @@ const ExperienceWork = () => {
             display="flex"
             flexDirection="column"
             width="full"
-            height="33%"
+            height={`${100 / WorkingExperiences.length}%`}
             px={{
               lg: 16,
             }}
