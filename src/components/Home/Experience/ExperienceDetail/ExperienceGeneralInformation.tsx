@@ -24,12 +24,25 @@ const ExperienceGeneralInformation = ({
           borderWidth={2}
           opacity={1}
           borderColor="dark.100"
-          width="30%"
+          width={{
+            base: "15%",
+            sm: "30%",
+          }}
         />
         <Text
-          width="40%"
+          width={{
+            base: "auto",
+            sm: "70%",
+            md: "50%",
+            lg: "60%",
+            xl: "40%",
+          }}
           fontSize={{
-            lg: 20,
+            base: 16,
+            sm: 18,
+            md: 18,
+            lg: 18,
+            xl: 20,
           }}
           fontWeight="semibold"
           textAlign="center"
@@ -40,7 +53,10 @@ const ExperienceGeneralInformation = ({
           borderWidth={2}
           opacity={1}
           borderColor="dark.100"
-          width="30%"
+          width={{
+            base: "15%",
+            sm: "30%",
+          }}
         />
       </Box>
       <Box
@@ -52,20 +68,38 @@ const ExperienceGeneralInformation = ({
           lg: 18,
         }}
         fontStyle="italic"
-        fontSize={{
-          lg: "xs",
-        }}
+        fontSize="xs"
         mb={{
-          lg: 5,
+          base: 7,
+          md: 5,
         }}
       >
-        <Text width="30%" textAlign="left">
+        <Text
+          width={{
+            base: "50%",
+            sm: "30%",
+          }}
+          textAlign="left"
+        >
           {experience.role}
         </Text>
-        <Text width="40%" textAlign="center">
+        <Text
+          display={{
+            base: "none",
+            sm: "inline",
+          }}
+          width="40%"
+          textAlign="center"
+        >
           {experience.type}
         </Text>
-        <Text width="30%" textAlign="right">
+        <Text
+          width={{
+            base: "50%",
+            sm: "30%",
+          }}
+          textAlign="right"
+        >
           {experience.date}
         </Text>
       </Box>

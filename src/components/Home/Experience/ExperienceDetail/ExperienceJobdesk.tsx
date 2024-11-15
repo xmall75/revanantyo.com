@@ -24,18 +24,29 @@ const ExperienceJobdesk = ({ jobdesk }: ExperienceJobdeskProps) => {
             mb={3}
             display="flex"
             alignItems="start"
+            fontSize={{
+              base: "sm",
+              md: "md",
+            }}
             _before={{
               content: `'${jobKey + 1}'`,
-              marginRight: 5,
-              fontSize: "md",
+              marginRight: {
+                base: 2,
+                md: 3,
+                lg: 5,
+              },
+              fontSize: {
+                base: "sm",
+                md: "md",
+              },
               position: "relative",
               display: "inline-flex",
               justifyContent: "center",
-              alignItems: "center",
-              minHeight: 25,
-              minWidth: 25,
-              maxHeight: 25,
-              maxWidth: 25,
+              alignItems: { base: "start", md: "center" },
+              minHeight: { base: 19, md: 21, lg: 25 },
+              minWidth: { base: 19, md: 21, lg: 25 },
+              maxHeight: { base: 19, md: 21, lg: 25 },
+              maxWidth: { base: 19, md: 21, lg: 25 },
               color: "background",
               background: backgroundColor,
               fontWeight: "bold",

@@ -10,6 +10,7 @@ const ExperienceWork = () => {
     <Box
       mt={{
         base: 20,
+        sm: 40,
         lg: 36,
       }}
       display="flex"
@@ -27,11 +28,14 @@ const ExperienceWork = () => {
         height="full"
         fontSize={{
           base: "8xl",
-          md: "9xl",
+          sm: "9xl",
         }}
         fontWeight="semibold"
         opacity={0.1}
-        lineHeight="10%"
+        lineHeight={{
+          base: "200%",
+          sm: "10%",
+        }}
         zIndex={-1}
       >
         <Text transform="rotate(-90deg)">EXPERIENCES</Text>
@@ -45,7 +49,8 @@ const ExperienceWork = () => {
             width="full"
             height={`${100 / WorkingExperiences.length}%`}
             px={{
-              lg: 16,
+              lg: 8,
+              xl: 16,
             }}
             position="relative"
           >
