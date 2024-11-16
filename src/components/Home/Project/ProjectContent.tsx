@@ -1,11 +1,11 @@
 import { Box, Text } from "@chakra-ui/react";
 
-import { WorkingExperiences } from "@/constants/working_experiences";
+import { ListProject } from "@/constants/project";
 
-import ExperienceGeneralInformation from "./ExperienceDetail/ExperienceGeneralInformation";
-import ExperienceJobdesk from "./ExperienceDetail/ExperienceJobdesk";
+import ProjectDescription from "./ProjectDescription";
+import ProjectGeneralInformation from "./ProjectGeneralInformation";
 
-const ExperienceWork = () => {
+const ProjectContent = () => {
   return (
     <Box
       mt={{
@@ -23,6 +23,7 @@ const ExperienceWork = () => {
     >
       <Box
         display="flex"
+        justifyContent="end"
         position="absolute"
         width="full"
         height="full"
@@ -33,30 +34,33 @@ const ExperienceWork = () => {
         fontWeight="semibold"
         opacity={0.1}
         lineHeight={{
-          base: "200%",
-          sm: 0,
-          lg: "10%",
+          base: "275%",
+          sm: "25%",
+          lg: "50%",
         }}
         zIndex={-1}
       >
-        <Text transform="rotate(-90deg)">EXPERIENCES</Text>
+        <Text transform="rotate(90deg)">PROJECTS</Text>
       </Box>
-      {WorkingExperiences.map((item, key) => {
+      {ListProject.map((item, key) => {
         return (
           <Box
             key={key}
             display="flex"
             flexDirection="column"
             width="full"
-            height={`${100 / WorkingExperiences.length}%`}
+            height={`${100 / ListProject.length}%`}
             px={{
               lg: 8,
               xl: 16,
             }}
             position="relative"
           >
-            <ExperienceGeneralInformation experience={item} />
-            <ExperienceJobdesk jobdesk={item.jobdesk} />
+            <ProjectGeneralInformation project={item} />
+            <ProjectDescription
+              description={item.description}
+              links={item.links}
+            />
           </Box>
         );
       })}
@@ -64,4 +68,4 @@ const ExperienceWork = () => {
   );
 };
 
-export default ExperienceWork;
+export default ProjectContent;

@@ -2,6 +2,7 @@ import { Box } from "@chakra-ui/react";
 
 import Experience from "@/components/Home/Experience/Experience";
 import Hero from "@/components/Home/Hero/Hero";
+import Project from "@/components/Home/Project/Project";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
     >
       <Hero />
       <Experience />
+      <Project />
     </Box>
   );
 }
