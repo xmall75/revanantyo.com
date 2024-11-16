@@ -1,4 +1,4 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Text, Tooltip } from "@chakra-ui/react";
 
 import { TechStack } from "@/constants/tech_stack";
 
@@ -65,7 +65,9 @@ const ExperienceTechStack = () => {
               }}
               overflow="hidden"
             >
-              <item.icon className="w-full h-full object-cover" />
+              <Tooltip label={item.title}>
+                <item.icon className="w-full h-full object-cover" />
+              </Tooltip>
             </Box>
           );
         })}
