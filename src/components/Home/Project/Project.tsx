@@ -1,5 +1,7 @@
 import { Box } from "@chakra-ui/react";
 
+import ProjectContent from "./ProjectContent";
+
 const Project = () => {
   return (
     <Box width="100%" minHeight="100vh">
@@ -15,7 +17,9 @@ const Project = () => {
         position="relative"
         width="full"
         height="100vh"
-      ></Box>
+      >
+        <ProjectContent />
+      </Box>
     </Box>
   );
 };
