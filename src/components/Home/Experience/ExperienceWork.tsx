@@ -34,7 +34,8 @@ const ExperienceWork = () => {
         opacity={0.1}
         lineHeight={{
           base: "200%",
-          sm: "10%",
+          sm: 0,
+          lg: "10%",
         }}
         zIndex={-1}
       >
