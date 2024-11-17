@@ -42,7 +42,7 @@ const ExperienceGeneralInformation = ({
             sm: 18,
             md: 18,
             lg: 18,
-            xl: 20,
+            xl: 24,
           }}
           fontWeight="semibold"
           textAlign="center"
@@ -68,10 +68,13 @@ const ExperienceGeneralInformation = ({
           lg: 18,
         }}
         fontStyle="italic"
-        fontSize="xs"
+        fontSize={{
+          base: "xs",
+          md: "sm",
+        }}
         mb={{
           base: 7,
-          md: 5,
+          md: 8,
         }}
       >
         <Text

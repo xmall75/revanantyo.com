@@ -11,35 +11,46 @@ const ExperienceWork = () => {
       mt={{
         base: 20,
         sm: 40,
-        lg: 36,
+        lg: 56,
       }}
       display="flex"
       flexDirection="column"
-      justifyContent="space-around"
+      justifyContent="space-between"
       alignItems="center"
       position="relative"
       width="full"
       height="100vh"
+      border="1px solid red"
     >
-      <Box
-        display="flex"
-        position="absolute"
-        width="full"
-        height="full"
-        fontSize={{
-          base: "8xl",
-          sm: "9xl",
-        }}
-        fontWeight="semibold"
-        opacity={0.1}
-        lineHeight={{
-          base: "200%",
-          sm: 0,
-          lg: "10%",
-        }}
-        zIndex={-1}
-      >
-        <Text transform="rotate(-90deg)">EXPERIENCES</Text>
+      <Box position="relative">
+        <Text
+          zIndex={1}
+          fontWeight="semibold"
+          opacity={1}
+          position="relative"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          fontSize={{
+            base: "3xl",
+            md: "6xl",
+          }}
+          _after={{
+            content: '"EXPERIENCES"',
+            zIndex: 0,
+            fontSize: {
+              base: "5xl",
+              sm: "6xl",
+              md: "8xl",
+              lg: "9xl",
+            },
+
+            opacity: 0.1,
+            position: "absolute",
+          }}
+        >
+          EXPERIENCES
+        </Text>
       </Box>
       {WorkingExperiences.map((item, key) => {
         return (
@@ -48,7 +59,6 @@ const ExperienceWork = () => {
             display="flex"
             flexDirection="column"
             width="full"
-            height={`${100 / WorkingExperiences.length}%`}
             px={{
               lg: 8,
               xl: 16,
