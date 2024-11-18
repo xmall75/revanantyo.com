@@ -9,7 +9,7 @@ const ExperienceWork = () => {
   return (
     <Box
       mt={{
-        base: 20,
+        base: 44,
         sm: 40,
         lg: 56,
       }}
@@ -20,7 +20,6 @@ const ExperienceWork = () => {
       position="relative"
       width="full"
       height="100vh"
-      border="1px solid red"
     >
       <Box position="relative">
         <Text
@@ -36,7 +35,7 @@ const ExperienceWork = () => {
             md: "6xl",
           }}
           _after={{
-            content: '"EXPERIENCES"',
+            content: '"EXPERIENCE"',
             zIndex: 0,
             fontSize: {
               base: "5xl",
@@ -44,12 +43,11 @@ const ExperienceWork = () => {
               md: "8xl",
               lg: "9xl",
             },
-
             opacity: 0.1,
             position: "absolute",
           }}
         >
-          EXPERIENCES
+          EXPERIENCE
         </Text>
       </Box>
       {WorkingExperiences.map((item, key) => {
