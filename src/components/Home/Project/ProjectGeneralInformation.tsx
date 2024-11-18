@@ -1,4 +1,4 @@
-import { Box, Divider, Text } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 
 import { IListProject } from "@/types/project";
 
@@ -21,48 +21,28 @@ const ProjectGeneralInformation = ({
         alignItems="center"
       >
         <Text
-          width="full"
           fontSize={{
-            base: 16,
-            sm: 18,
-            md: 18,
-            lg: 18,
-            xl: 20,
+            base: 20,
+            sm: 22,
+            xl: 24,
           }}
           fontWeight="semibold"
           textAlign="left"
         >
           {project.title}
         </Text>
-        <Divider
-          borderWidth={2}
-          opacity={1}
-          borderColor="dark.100"
-          width={{
-            base: "10%",
-            sm: "20%",
-            md: "40%",
-            lg: "30%",
-          }}
-        />
       </Box>
-      <Box
-        display="flex"
-        justifyContent="space-between"
-        alignItems="start"
-        width="full"
-        height={{
-          lg: 18,
-        }}
+      <Text
+        fontSize="sm"
         fontStyle="italic"
-        fontSize="xs"
+        textAlign="left"
         mb={{
-          base: 7,
-          md: 5,
+          base: 3,
+          lg: 5,
         }}
       >
-        <Text textAlign="left">{project.role}</Text>
-      </Box>
+        {project.role}
+      </Text>
     </>
   );
 };

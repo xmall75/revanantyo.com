@@ -1,16 +1,14 @@
-"use client";
+import { Box, Text } from "@chakra-ui/react";
 
-import { Box, Text, useColorModeValue } from "@chakra-ui/react";
+import GradientText from "@/components/GradientText";
 
 import { gradientBrown, gradientMagenta } from "@/constants/gradient_color";
 
 const HeroMainText = () => {
-  const textColor = useColorModeValue(gradientBrown, gradientMagenta);
-
   return (
     <>
       <Box zIndex={1}>
-        <Text
+        <GradientText
           as="span"
           lineHeight="80%"
           fontWeight="bold"
@@ -20,15 +18,14 @@ const HeroMainText = () => {
             md: "8xl",
             xl: "9xl",
           }}
-          bgGradient={textColor}
-          backgroundClip="text"
           ml={{
             base: -1,
             lg: -2,
           }}
-        >
-          SOFTWARE
-        </Text>
+          text="SOFTWARE"
+          lightModeColor={gradientBrown}
+          darkModeColor={gradientMagenta}
+        />
       </Box>
       <Box
         display="inline-flex"

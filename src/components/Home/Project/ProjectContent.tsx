@@ -9,38 +9,63 @@ const ProjectContent = () => {
   return (
     <Box
       mt={{
-        base: 20,
-        sm: 40,
-        lg: 36,
+        base: 48,
+        sm: 52,
+        lg: 56,
       }}
       display="flex"
       flexDirection="column"
-      justifyContent="space-around"
+      justifyContent="space-between"
       alignItems="center"
       position="relative"
       width="full"
-      height="100vh"
+      minHeight={{
+        base: "160vh",
+        sm: "180vh",
+        md: "100vh",
+      }}
+      gap={{
+        base: 3,
+        sm: 5,
+        md: 7,
+      }}
+      overflow="hidden"
     >
       <Box
-        display="flex"
-        justifyContent="end"
-        position="absolute"
-        width="full"
-        height="full"
-        fontSize={{
-          base: "8xl",
-          sm: "9xl",
+        mb={{
+          base: 3,
+          sm: 4,
+          md: 5,
+          lg: 6,
         }}
-        fontWeight="semibold"
-        opacity={0.1}
-        lineHeight={{
-          base: "275%",
-          sm: "25%",
-          lg: "50%",
-        }}
-        zIndex={-1}
+        position="relative"
       >
-        <Text transform="rotate(90deg)">PROJECTS</Text>
+        <Text
+          zIndex={1}
+          fontWeight="semibold"
+          opacity={1}
+          position="relative"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          fontSize={{
+            base: "4xl",
+            sm: "6xl",
+          }}
+          _after={{
+            content: '"PROJECT"',
+            zIndex: 0,
+            fontSize: {
+              base: "7xl",
+              sm: "8xl",
+              lg: "9xl",
+            },
+            opacity: 0.1,
+            position: "absolute",
+          }}
+        >
+          PROJECT
+        </Text>
       </Box>
       {ListProject.map((item, key) => {
         return (
@@ -49,15 +74,17 @@ const ProjectContent = () => {
             display="flex"
             flexDirection="column"
             width="full"
-            height={`${100 / ListProject.length}%`}
-            px={{
-              lg: 8,
-              xl: 16,
-            }}
             position="relative"
+            mb={{
+              base: 5,
+              sm: 7,
+              md: 6,
+              lg: 7,
+            }}
           >
             <ProjectGeneralInformation project={item} />
             <ProjectDescription
+              images={item.images}
               description={item.description}
               links={item.links}
             />
