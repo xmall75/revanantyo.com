@@ -19,7 +19,10 @@ const ExperienceWork = () => {
       alignItems="center"
       position="relative"
       width="full"
-      height="100vh"
+      height={{
+        base: "85vh",
+        lg: "90vh",
+      }}
     >
       <Box position="relative">
         <Text
@@ -31,15 +34,16 @@ const ExperienceWork = () => {
           alignItems="center"
           justifyContent="center"
           fontSize={{
-            base: "3xl",
+            base: "4xl",
+            sm: "5xl",
             md: "6xl",
           }}
           _after={{
             content: '"EXPERIENCE"',
             zIndex: 0,
             fontSize: {
-              base: "5xl",
-              sm: "6xl",
+              base: "6xl",
+              sm: "7xl",
               md: "8xl",
               lg: "9xl",
             },
