@@ -15,8 +15,9 @@ const ExperienceGeneralInformation = ({
       <Box width="full" mb={1}>
         <Text
           fontSize={{
-            base: 16,
+            base: 20,
             sm: 18,
+            md: 22,
             xl: 24,
           }}
           fontWeight="semibold"
