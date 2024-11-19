@@ -17,7 +17,7 @@ const HeroMainSocialMedia = () => {
         }}
       />
       <Grid
-        templateColumns="repeat(3, 1fr)"
+        templateColumns="repeat(4, 1fr)"
         justifyContent="center"
         alignContent="center"
         gap={{
