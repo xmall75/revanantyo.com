@@ -1,5 +1,6 @@
 import { Box, Button, Text } from "@chakra-ui/react";
-import Image from "next/image";
+
+import ProjectThumbnail from "./ProjectThumbnail";
 
 import { IListProject } from "@/types/project";
 
@@ -28,21 +29,7 @@ const ProjectDescription = ({
         lg: 5,
       }}
     >
-      <Box
-        width={{
-          md: 280,
-        }}
-        height={{
-          md: 160,
-        }}
-        alignSelf={{
-          md: "center",
-        }}
-        aspectRatio="16/9"
-        position="relative"
-      >
-        <Image src={images[0]} className="absolute" fill alt={images[0]} />
-      </Box>
+      <ProjectThumbnail images={images} imageUrl={images[0]} />
       <Box display="flex" flexDirection="column" justifyContent="space-between">
         <Text
           fontSize={{

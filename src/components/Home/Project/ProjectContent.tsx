@@ -2,8 +2,8 @@ import { Box, Text } from "@chakra-ui/react";
 
 import { ListProject } from "@/constants/project";
 
-import ProjectDescription from "./ProjectDescription";
-import ProjectGeneralInformation from "./ProjectGeneralInformation";
+import ProjectDescription from "./ProjectDetail/ProjectDescription";
+import ProjectGeneralInformation from "./ProjectDetail/ProjectGeneralInformation";
 
 const ProjectContent = () => {
   return (
