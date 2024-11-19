@@ -10,7 +10,7 @@ export const ListMenu = [
     path: AppRoute.experience,
   },
   {
-    title: "Contact",
-    path: AppRoute.contact,
+    title: "Project",
+    path: AppRoute.project,
   },
 ];

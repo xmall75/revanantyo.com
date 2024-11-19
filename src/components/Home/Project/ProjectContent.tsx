@@ -8,6 +8,7 @@ import ProjectGeneralInformation from "./ProjectDetail/ProjectGeneralInformation
 const ProjectContent = () => {
   return (
     <Box
+      id="project"
       mt={{
         base: 48,
         sm: 52,
