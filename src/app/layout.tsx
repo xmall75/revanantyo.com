@@ -5,6 +5,7 @@ import "./globals.css";
 
 import useGetColorMode from "@/hooks/useGetColorMode";
 
+import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
 
 import { Providers } from "./providers";
@@ -32,6 +33,7 @@ export default function RootLayout({
         <Providers colorMode={colorMode}>
           <Navbar />
           {children}
+          <Footer />
         </Providers>
       </body>
     </html>

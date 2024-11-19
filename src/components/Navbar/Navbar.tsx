@@ -50,7 +50,7 @@ const Navbar = () => {
           lg: "70%",
         }}
         justifyContent="space-between"
-        justifyItems="center"
+        alignItems="center"
       >
         <NavbarAvatar />
         <NavbarMenu
