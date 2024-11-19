@@ -8,8 +8,9 @@ import ExperienceJobdesk from "./ExperienceDetail/ExperienceJobdesk";
 const ExperienceWork = () => {
   return (
     <Box
+      id="experience"
       mt={{
-        base: 20,
+        base: 44,
         sm: 40,
         lg: 56,
       }}
@@ -19,8 +20,10 @@ const ExperienceWork = () => {
       alignItems="center"
       position="relative"
       width="full"
-      height="100vh"
-      border="1px solid red"
+      height={{
+        base: "85vh",
+        lg: "90vh",
+      }}
     >
       <Box position="relative">
         <Text
@@ -32,24 +35,24 @@ const ExperienceWork = () => {
           alignItems="center"
           justifyContent="center"
           fontSize={{
-            base: "3xl",
+            base: "4xl",
+            sm: "5xl",
             md: "6xl",
           }}
           _after={{
-            content: '"EXPERIENCES"',
+            content: '"EXPERIENCE"',
             zIndex: 0,
             fontSize: {
-              base: "5xl",
-              sm: "6xl",
+              base: "6xl",
+              sm: "7xl",
               md: "8xl",
               lg: "9xl",
             },
-
             opacity: 0.1,
             position: "absolute",
           }}
         >
-          EXPERIENCES
+          EXPERIENCE
         </Text>
       </Box>
       {WorkingExperiences.map((item, key) => {

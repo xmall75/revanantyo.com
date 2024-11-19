@@ -10,4 +10,5 @@ export interface IListProject {
     url: string;
     icon: IconType;
   }[];
+  images: string[];
 }

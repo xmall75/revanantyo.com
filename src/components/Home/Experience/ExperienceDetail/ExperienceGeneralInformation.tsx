@@ -1,4 +1,5 @@
-import { Box, Divider, Text } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
+import { GoDotFill } from "react-icons/go";
 
 import { IWorkingExperience } from "@/types/experience";
 
@@ -11,63 +12,29 @@ const ExperienceGeneralInformation = ({
 }: ExperienceGeneralInformationProps) => {
   return (
     <>
-      <Box
-        width="full"
-        height={{
-          lg: 25,
-        }}
-        display="flex"
-        justifyContent="space-between"
-        alignItems="center"
-      >
-        <Divider
-          borderWidth={2}
-          opacity={1}
-          borderColor="dark.100"
-          width={{
-            base: "15%",
-            sm: "30%",
-          }}
-        />
+      <Box width="full" mb={1}>
         <Text
-          width={{
-            base: "auto",
-            sm: "70%",
-            md: "50%",
-            lg: "60%",
-            xl: "40%",
-          }}
           fontSize={{
-            base: 16,
+            base: 20,
             sm: 18,
-            md: 18,
-            lg: 18,
+            md: 22,
             xl: 24,
           }}
           fontWeight="semibold"
-          textAlign="center"
         >
           {experience.company}
         </Text>
-        <Divider
-          borderWidth={2}
-          opacity={1}
-          borderColor="dark.100"
-          width={{
-            base: "15%",
-            sm: "30%",
-          }}
-        />
       </Box>
       <Box
         display="flex"
-        justifyContent="space-between"
-        alignItems="start"
+        justifyContent="start"
+        alignItems="center"
+        gap={2}
         width="full"
         height={{
           lg: 18,
         }}
-        fontStyle="italic"
+        color="light.500"
         fontSize={{
           base: "xs",
           md: "sm",
@@ -77,34 +44,10 @@ const ExperienceGeneralInformation = ({
           md: 8,
         }}
       >
-        <Text
-          width={{
-            base: "50%",
-            sm: "30%",
-          }}
-          textAlign="left"
-        >
-          {experience.role}
-        </Text>
-        <Text
-          display={{
-            base: "none",
-            sm: "inline",
-          }}
-          width="40%"
-          textAlign="center"
-        >
-          {experience.type}
-        </Text>
-        <Text
-          width={{
-            base: "50%",
-            sm: "30%",
-          }}
-          textAlign="right"
-        >
-          {experience.date}
-        </Text>
+        <Text>{experience.type},</Text>
+        <Text>{experience.role}</Text>
+        <GoDotFill size={10} />
+        <Text>{experience.date}</Text>
       </Box>
     </>
   );
