@@ -1,9 +1,13 @@
-import { Box, Divider, Flex, Text } from "@chakra-ui/react";
+"use client";
+
+import { Box, Divider, Flex, Text, useColorModeValue } from "@chakra-ui/react";
 import { IoMail } from "react-icons/io5";
 
 import { SocialMedia } from "@/constants/social_media";
 
 const Footer = () => {
+  const iconColor = useColorModeValue("brownPrimary.700", "blueAccent.500");
+
   const listContact = SocialMedia.filter(
     (social) => social.title.toLowerCase() !== "resume",
   );
@@ -71,6 +75,10 @@ const Footer = () => {
                   lg: 27,
                 }}
                 overflow="hidden"
+                _hover={{
+                  color: iconColor,
+                }}
+                transition="color 0.1s ease!important"
               >
                 <item.icon className="w-full h-full object-cover" />
               </Box>
