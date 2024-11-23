@@ -1,11 +1,15 @@
 import { createClient } from "next-sanity";
 
-import config from "../../../sanity.config";
+import {
+  sanityApiVersion,
+  sanityDataset,
+  sanityProjectId,
+} from "@/sanity/lib/env";
 
 const clientConfig = createClient({
-  projectId: config.projectId,
-  dataset: config.dataset,
-  apiVersion: config.apiVersion,
+  projectId: sanityProjectId,
+  dataset: sanityDataset,
+  apiVersion: sanityApiVersion,
   useCdn: false,
 });
 

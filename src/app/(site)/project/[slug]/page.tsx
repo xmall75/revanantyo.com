@@ -10,9 +10,8 @@ const ProjectDetailPage = async ({
   };
 }) => {
   const project = await getProjectBySlug(params.slug);
-  console.log(project);
 
-  return <Box></Box>;
+  return <Box>{project.name}</Box>;
 };
 
 export default ProjectDetailPage;

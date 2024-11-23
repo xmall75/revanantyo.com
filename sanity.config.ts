@@ -1,14 +1,21 @@
 import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
 
+import {
+  sanityApiVersion,
+  sanityBasePath,
+  sanityDataset,
+  sanityProjectId,
+  sanityTitle,
+} from "@/sanity/lib/env";
 import schemas from "@/sanity/schemas/index.schema";
 
 const config = defineConfig({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID as string,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET as string,
-  title: process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE,
-  apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION,
-  basePath: process.env.NEXT_PUBLIC_SANITY_STUDIO_PATH,
+  projectId: sanityProjectId as string,
+  dataset: sanityDataset as string,
+  title: sanityTitle,
+  apiVersion: sanityApiVersion,
+  basePath: sanityBasePath,
   plugins: [structureTool()],
   schema: { types: schemas },
 });
