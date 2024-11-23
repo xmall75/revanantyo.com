@@ -29,7 +29,12 @@ const project = {
     },
     {
       name: "url",
-      title: "URL",
+      title: "Live URL",
+      type: "url",
+    },
+    {
+      name: "github",
+      title: "Github",
       type: "url",
     },
     {
