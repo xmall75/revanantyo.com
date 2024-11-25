@@ -3,11 +3,14 @@ import { PortableTextBlock } from "sanity";
 
 export interface IProject {
   _id: string;
-  createdAt: Date;
+  _createdAt: Date;
   name: string;
+  role: string;
   slug: string;
-  image: string;
+  images: { url: string; alt: string }[];
   url: string;
+  github: string;
+  shortDescription: string;
   content: PortableTextBlock[];
 }
 

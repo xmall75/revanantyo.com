@@ -17,9 +17,14 @@ const nextConfig = {
   },
 
   // Uncoment to add domain whitelist
-  // images: {
-  //   domains: ['res.cloudinary.com'],
-  // }
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.sanity.io",
+      },
+    ],
+  },
 };
 
 export default nextConfig;

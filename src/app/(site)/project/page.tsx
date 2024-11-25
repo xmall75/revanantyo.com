@@ -1,15 +1,24 @@
 import { Box } from "@chakra-ui/react";
 
-import { getProjects } from "@/sanity/utils/project.utils";
+import ProjectMain from "@/components/Project/ProjectMain";
 
-const ProjectPage = async () => {
-  const projects = await getProjects();
-
+const ProjectPage = () => {
   return (
-    <Box>
-      {projects.map((project, index) => {
-        return <span key={index}>{project.name}</span>;
-      })}
+    <Box
+      mt={{
+        base: 36,
+        md: 36,
+        lg: 52,
+      }}
+      width={{
+        base: "92%",
+        sm: "90%",
+        md: "80%",
+        lg: "70%",
+      }}
+      mx="auto"
+    >
+      <ProjectMain />
     </Box>
   );
 };

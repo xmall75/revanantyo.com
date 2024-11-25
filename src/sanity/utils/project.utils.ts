@@ -4,14 +4,19 @@ import { IProject } from "@/types/project";
 
 export const getProjects = async (): Promise<IProject[]> => {
   const projects = await clientConfig.fetch(
-    `*[_type == "project"]{
+    `*[_type == "project"] | order(_createdAt desc) {
       _id,
       _createdAt,
       name,
+      role,
       "slug": slug.current,
-      "image": image.asset->url,
+      "images": images[]{ 
+        "url": asset->url,
+        alt
+      },
       url,
       github,
+      shortDescription,
       content
     }`,
     undefined,
@@ -27,13 +32,19 @@ export const getProjectBySlug = async (slug: string): Promise<IProject> => {
       _id,
       _createdAt,
       name,
+      role,
       "slug": slug.current,
-      "image": image.asset->url,
+      "images": images[]{ 
+        "url": asset->url,
+        alt
+      },
       url,
-      github
+      github,
+      shortDescription,
       content
     }`,
     { slug },
+    { cache: "no-store" },
   );
 
   return project;

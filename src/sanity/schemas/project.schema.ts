@@ -1,4 +1,4 @@
-const project = {
+const projectSchema = {
   name: "project",
   title: "Projects",
   type: "document",
@@ -9,21 +9,31 @@ const project = {
       type: "string",
     },
     {
+      name: "role",
+      title: "Role",
+      type: "string",
+    },
+    {
       name: "slug",
       title: "Slug",
       type: "slug",
       options: { source: "name" },
     },
     {
-      name: "image",
-      title: "Image",
-      type: "image",
-      options: { hotspot: true },
-      fields: [
+      name: "images", // Changed from 'image' to 'images'
+      title: "Images",
+      type: "array",
+      of: [
         {
-          name: "alt",
-          title: "Alt",
-          type: "string",
+          type: "image",
+          options: { hotspot: true },
+          fields: [
+            {
+              name: "alt",
+              title: "Alt",
+              type: "string",
+            },
+          ],
         },
       ],
     },
@@ -38,12 +48,24 @@ const project = {
       type: "url",
     },
     {
+      name: "shortDescription",
+      title: "Short Description",
+      type: "string",
+    },
+    {
       name: "content",
       title: "Content",
       type: "array",
-      of: [{ type: "block" }],
+      of: [
+        {
+          type: "block",
+        },
+        {
+          type: "image",
+        },
+      ],
     },
   ],
 };
 
-export default project;
+export default projectSchema;

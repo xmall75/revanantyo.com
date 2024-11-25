@@ -17,6 +17,7 @@
     "@chakra-ui/react": "^2.10.2",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
+    "@portabletext/react": "^3.1.0",
     "@sanity/demo": "^2.0.0",
     "@sanity/icons": "^3.4.0",
     "@sanity/image-url": "^1.1.0",
