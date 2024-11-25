@@ -5,9 +5,11 @@ import Image from "next/image";
 
 import ProjectGallery from "./ProjectGallery";
 
+import { IProjectSchema } from "@/types/project";
+
 interface ProjectThumbnailProps {
   imageUrl: string;
-  images: string[];
+  images: IProjectSchema["images"];
 }
 
 const ProjectThumbnail = ({ imageUrl, images }: ProjectThumbnailProps) => {

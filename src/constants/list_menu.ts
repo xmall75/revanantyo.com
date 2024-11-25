@@ -11,6 +11,6 @@ export const ListMenu = [
   },
   {
     title: "Project",
-    path: AppRoute.project,
+    path: AppRoute.projectPage,
   },
 ];

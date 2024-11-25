@@ -1,11 +1,14 @@
 import { Box, Text } from "@chakra-ui/react";
 
-import { ListProject } from "@/constants/project";
+import { AppRoute } from "@/constants/app_route";
+import { getProjects } from "@/sanity/utils/project.utils";
 
 import ProjectDescription from "./ProjectDetail/ProjectDescription";
 import ProjectGeneralInformation from "./ProjectDetail/ProjectGeneralInformation";
 
-const ProjectContent = () => {
+const ProjectContent = async () => {
+  const projects = await getProjects();
+
   return (
     <Box
       id="project"
@@ -68,7 +71,7 @@ const ProjectContent = () => {
           PROJECT
         </Text>
       </Box>
-      {ListProject.map((item, key) => {
+      {projects.slice(0, 3).map((project, key) => {
         return (
           <Box
             key={key}
@@ -83,15 +86,29 @@ const ProjectContent = () => {
               lg: 7,
             }}
           >
-            <ProjectGeneralInformation project={item} />
+            <ProjectGeneralInformation project={project} />
             <ProjectDescription
-              images={item.images}
-              description={item.description}
-              links={item.links}
+              slug={project.slug}
+              images={project.images}
+              description={project.shortDescription}
+              github={project.github}
+              url={project.url}
             />
           </Box>
         );
       })}
+      <Text
+        as="a"
+        href={AppRoute.projectPage}
+        textDecoration="underline"
+        textUnderlineOffset={5}
+        _hover={{
+          opacity: 0.7,
+        }}
+        transition="0.15s ease!important"
+      >
+        View More Projects
+      </Text>
     </Box>
   );
 };

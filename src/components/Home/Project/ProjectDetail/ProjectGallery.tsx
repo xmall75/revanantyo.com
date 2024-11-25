@@ -13,8 +13,10 @@ import Image from "next/image";
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
+import { IProjectSchema } from "@/types/project";
+
 interface ProjectGalleryProps {
-  images: string[];
+  images: IProjectSchema["images"];
   isOpen: boolean;
   onClose: () => void;
 }
@@ -79,7 +81,7 @@ const ProjectGallery = ({ images, isOpen, onClose }: ProjectGalleryProps) => {
               }}
               position="absolute"
               onClick={previousImage}
-              cursor="pointer"
+              cursor={images.length === 1 ? "not-allowed" : "pointer"}
               background="background"
               left={1}
               zIndex={2}
@@ -105,9 +107,9 @@ const ProjectGallery = ({ images, isOpen, onClose }: ProjectGalleryProps) => {
                   >
                     <Image
                       fill
-                      src={image}
+                      src={image.url}
                       className="absolute"
-                      alt="gallery-image"
+                      alt={image.alt}
                     />
                   </Box>
                 );
@@ -124,7 +126,7 @@ const ProjectGallery = ({ images, isOpen, onClose }: ProjectGalleryProps) => {
               }}
               position="absolute"
               onClick={nextImage}
-              cursor="pointer"
+              cursor={images.length === 1 ? "not-allowed" : "pointer"}
               background="background"
               right={1}
               zIndex={2}
@@ -139,6 +141,9 @@ const ProjectGallery = ({ images, isOpen, onClose }: ProjectGalleryProps) => {
               />
             </Box>
           </Box>
+          <Text textAlign="center">
+            {currentImage + 1} / {images.length}
+          </Text>
         </ModalBody>
       </ModalContent>
     </Modal>
