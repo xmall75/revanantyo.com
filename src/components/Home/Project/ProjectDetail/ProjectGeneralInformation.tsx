@@ -1,9 +1,9 @@
 import { Box, Text } from "@chakra-ui/react";
 
-import { IListProject } from "@/types/project";
+import { IProjectSchema } from "@/types/project";
 
 interface ProjectGeneralInformationProps {
-  project: IListProject;
+  project: IProjectSchema;
 }
 
 const ProjectGeneralInformation = ({
@@ -29,7 +29,7 @@ const ProjectGeneralInformation = ({
           fontWeight="semibold"
           textAlign="left"
         >
-          {project.title}
+          {project.name}
         </Text>
       </Box>
       <Text

@@ -3,12 +3,12 @@ import { FaGithub, FaGlobe } from "react-icons/fa";
 
 import CustomPortableText from "@/components/CustomPortableText";
 
-import { IProject } from "@/types/project";
+import { IProjectSchema } from "@/types/project";
 
 interface ProjectDetailContentProps {
-  content: IProject["content"];
-  github: IProject["github"];
-  url: IProject["url"];
+  content: IProjectSchema["content"];
+  github: IProjectSchema["github"];
+  url: IProjectSchema["url"];
 }
 
 const ProjectDetailContent = ({

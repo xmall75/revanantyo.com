@@ -4,10 +4,10 @@ import { FaGithub, FaGlobe } from "react-icons/fa";
 
 import { AppRoute } from "@/constants/app_route";
 
-import { IProject } from "@/types/project";
+import { IProjectSchema } from "@/types/project";
 
 interface ProjectItemProps {
-  project: IProject;
+  project: IProjectSchema;
 }
 
 const ProjectItem = ({ project }: ProjectItemProps) => {
@@ -18,7 +18,10 @@ const ProjectItem = ({ project }: ProjectItemProps) => {
 
   return (
     <GridItem display="flex">
-      <Card width="full">
+      <Card
+        width="full"
+        bgGradient="linear-gradient(to bottom right, background, transparent)"
+      >
         <CardBody
           display="flex"
           flexDirection="column"

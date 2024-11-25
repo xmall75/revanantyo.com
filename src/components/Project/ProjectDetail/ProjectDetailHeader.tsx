@@ -5,13 +5,13 @@ import Image from "next/image";
 
 import { FormatDate } from "@/constants/common";
 
-import { IProject } from "@/types/project";
+import { IProjectSchema } from "@/types/project";
 
 interface ProjectDetailHeaderProps {
-  title: IProject["name"];
-  thumbnail: IProject["images"];
-  shortDescription: IProject["shortDescription"];
-  date: IProject["_createdAt"];
+  title: IProjectSchema["name"];
+  thumbnail: IProjectSchema["images"];
+  shortDescription: IProjectSchema["shortDescription"];
+  date: IProjectSchema["_createdAt"];
 }
 
 const ProjectDetailHeader = ({

@@ -1,19 +1,26 @@
 import { Box, Button, Text } from "@chakra-ui/react";
+import { FaGithub, FaGlobe } from "react-icons/fa";
+
+import { AppRoute } from "@/constants/app_route";
 
 import ProjectThumbnail from "./ProjectThumbnail";
 
-import { IListProject } from "@/types/project";
+import { IProjectSchema } from "@/types/project";
 
 interface ProjectDescriptionProps {
-  images: IListProject["images"];
-  description: IListProject["description"];
-  links: IListProject["links"];
+  slug: IProjectSchema["slug"];
+  images: IProjectSchema["images"];
+  description: IProjectSchema["shortDescription"];
+  github: IProjectSchema["github"];
+  url: IProjectSchema["url"];
 }
 
 const ProjectDescription = ({
+  slug,
   images,
   description,
-  links,
+  github,
+  url,
 }: ProjectDescriptionProps) => {
   return (
     <Box
@@ -29,7 +36,7 @@ const ProjectDescription = ({
         lg: 5,
       }}
     >
-      <ProjectThumbnail images={images} imageUrl={images[0]} />
+      <ProjectThumbnail images={images} imageUrl={images[0].url} />
       <Box display="flex" flexDirection="column" justifyContent="space-between">
         <Text
           fontSize={{
@@ -40,46 +47,70 @@ const ProjectDescription = ({
           {description}
         </Text>
         <Box
-          display="flex"
-          justifyContent="start"
-          alignItems="start"
-          gap={{
-            base: 2,
+          mt={{
+            base: 12,
+            sm: 14,
           }}
+          display="flex"
+          gap={2}
         >
-          {links.map((item, index) => {
-            return (
-              <Button
-                key={index}
-                as="a"
-                mt={{
-                  base: 2,
-                  lg: 3,
-                }}
-                href={item.url}
-                target="_blank"
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
-                gap={{
-                  sm: 2,
+          <Button
+            as="a"
+            href={`${AppRoute.projectPage}/${slug}`}
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Text
+              fontSize={{
+                base: "sm",
+              }}
+            >
+              Read More
+            </Text>
+          </Button>
+          {github && (
+            <Button
+              as="a"
+              href={github}
+              target="_blank"
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+              gap={2}
+            >
+              <FaGithub />
+              <Text
+                display={{
+                  base: "none",
+                  md: "inline",
                 }}
               >
-                <item.icon />
-                <Text
-                  display={{
-                    base: "none",
-                    sm: "inline",
-                  }}
-                  fontSize={{
-                    base: "sm",
-                  }}
-                >
-                  {item.title}
-                </Text>
-              </Button>
-            );
-          })}
+                Github
+              </Text>
+            </Button>
+          )}
+          {url && (
+            <Button
+              as="a"
+              href={url}
+              target="_blank"
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+              gap={2}
+            >
+              <FaGlobe />
+              <Text
+                display={{
+                  base: "none",
+                  md: "inline",
+                }}
+              >
+                Website
+              </Text>
+            </Button>
+          )}
         </Box>
       </Box>
     </Box>
