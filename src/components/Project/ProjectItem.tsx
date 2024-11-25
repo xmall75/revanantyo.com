@@ -81,7 +81,6 @@ const ProjectItem = ({ project }: ProjectItemProps) => {
             <Button
               as="a"
               href={`${AppRoute.projectPage}/${project.slug}`}
-              target="_blank"
               display="flex"
               justifyContent="center"
               alignItems="center"

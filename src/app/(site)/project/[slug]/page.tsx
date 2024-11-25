@@ -1,5 +1,8 @@
 import { Box } from "@chakra-ui/react";
 
+import ProjectDetailContent from "@/components/Project/ProjectDetail/ProjectDetailContent";
+import ProjectDetailHeader from "@/components/Project/ProjectDetail/ProjectDetailHeader";
+
 import { getProjectBySlug } from "@/sanity/utils/project.utils";
 
 const ProjectDetailPage = async ({
@@ -11,7 +14,34 @@ const ProjectDetailPage = async ({
 }) => {
   const project = await getProjectBySlug(params.slug);
 
-  return <Box>{project.name}</Box>;
+  return (
+    <Box
+      mt={{
+        base: 36,
+        md: 36,
+        lg: 48,
+      }}
+      width={{
+        base: "92%",
+        sm: "90%",
+        md: "80%",
+        lg: "70%",
+      }}
+      mx="auto"
+    >
+      <ProjectDetailHeader
+        title={project.name}
+        thumbnail={project.images}
+        shortDescription={project.shortDescription}
+        date={project._createdAt}
+      />
+      <ProjectDetailContent
+        content={project.content}
+        github={project.github}
+        url={project.url}
+      />
+    </Box>
+  );
 };
 
 export default ProjectDetailPage;
