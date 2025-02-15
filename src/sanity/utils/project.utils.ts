@@ -1,27 +1,16 @@
 import clientConfig from "../config/client";
+import { projectBySlugQuery, projectsQuery } from "../queries/project.queries";
 
 import { IProjectSchema } from "@/types/project";
 
-export const getProjects = async (): Promise<IProjectSchema[]> => {
-  const projects = await clientConfig.fetch(
-    `*[_type == "project"] | order(_createdAt desc) {
-      _id,
-      _createdAt,
-      name,
-      role,
-      "slug": slug.current,
-      "images": images[]{ 
-        "url": asset->url,
-        alt
-      },
-      url,
-      github,
-      shortDescription,
-      content
-    }`,
-    undefined,
-    { cache: "no-store" },
-  );
+export const getProjects = async (
+  limit?: number,
+): Promise<IProjectSchema[]> => {
+  const query = projectsQuery(limit);
+
+  const projects = await clientConfig.fetch(query, undefined, {
+    cache: "no-store",
+  });
 
   return projects;
 };
@@ -29,22 +18,10 @@ export const getProjects = async (): Promise<IProjectSchema[]> => {
 export const getProjectBySlug = async (
   slug: string,
 ): Promise<IProjectSchema> => {
+  const query = projectBySlugQuery(slug);
+
   const project = await clientConfig.fetch(
-    `*[_type == "project" && slug.current == $slug][0]{
-      _id,
-      _createdAt,
-      name,
-      role,
-      "slug": slug.current,
-      "images": images[]{ 
-        "url": asset->url,
-        alt
-      },
-      url,
-      github,
-      shortDescription,
-      content
-    }`,
+    query,
     { slug },
     { cache: "no-store" },
   );
