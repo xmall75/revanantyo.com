@@ -16,21 +16,23 @@ const ExperienceWork = () => {
       }}
       display="flex"
       flexDirection="column"
-      justifyContent="space-between"
+      justifyContent="start"
       alignItems="center"
       position="relative"
       width="full"
-      height={{
-        base: "85vh",
-        lg: "90vh",
+      gap={{
+        base: 3,
+        sm: 5,
+        md: 7,
       }}
     >
       <Box
         position="relative"
-        marginBottom={{
-          base: 1,
-          sm: 3,
-          xl: 5,
+        mb={{
+          base: 3,
+          sm: 4,
+          md: 5,
+          lg: 6,
         }}
       >
         <Text

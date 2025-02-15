@@ -23,11 +23,6 @@ const ProjectContent = async () => {
       alignItems="center"
       position="relative"
       width="full"
-      minHeight={{
-        base: "160vh",
-        sm: "180vh",
-        md: "100vh",
-      }}
       gap={{
         base: 3,
         sm: 5,
