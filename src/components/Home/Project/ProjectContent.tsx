@@ -1,7 +1,7 @@
 import { Box, Text } from "@chakra-ui/react";
 
 import { AppRoute } from "@/constants/app_route";
-import { getProjects } from "@/sanity/utils/project.utils";
+import { getProjects } from "@/sanity/services/project.service";
 
 import ProjectDescription from "./ProjectDetail/ProjectDescription";
 import ProjectGeneralInformation from "./ProjectDetail/ProjectGeneralInformation";

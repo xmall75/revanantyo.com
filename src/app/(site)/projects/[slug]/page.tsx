@@ -3,7 +3,7 @@ import { Box } from "@chakra-ui/react";
 import ProjectDetailContent from "@/components/Project/ProjectDetail/ProjectDetailContent";
 import ProjectDetailHeader from "@/components/Project/ProjectDetail/ProjectDetailHeader";
 
-import { getProjectBySlug } from "@/sanity/utils/project.utils";
+import { getProjectBySlug } from "@/sanity/services/project.service";
 
 const ProjectDetailPage = async ({
   params,
