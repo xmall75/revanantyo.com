@@ -34,7 +34,7 @@ const ExperienceGeneralInformation = ({
         height={{
           lg: 18,
         }}
-        color="light.500"
+        color="light.700"
         fontSize={{
           base: "xs",
           md: "sm",

@@ -9,10 +9,8 @@ interface ExperienceJobdeskProps {
 }
 
 const ExperienceJobdesk = ({ jobdesk }: ExperienceJobdeskProps) => {
-  const backgroundColor = useColorModeValue(
-    "background._dark",
-    "background._light",
-  );
+  const backgroundColor = useColorModeValue("dark.600", "light.50");
+  const textColor = useColorModeValue("light.50", "dark.600");
 
   return (
     <OrderedList listStylePosition="outside">
@@ -47,7 +45,7 @@ const ExperienceJobdesk = ({ jobdesk }: ExperienceJobdeskProps) => {
               minWidth: { base: 19, md: 21, lg: 25 },
               maxHeight: { base: 19, md: 21, lg: 25 },
               maxWidth: { base: 19, md: 21, lg: 25 },
-              color: "background",
+              color: textColor,
               background: backgroundColor,
               fontWeight: "bold",
               borderRadius: "3px",

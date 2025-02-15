@@ -110,8 +110,8 @@ const theme = (colorMode: StyleFunctionProps["colorMode"]) => {
   const styles = {
     global: (props: StyleFunctionProps) => ({
       body: {
-        bg: mode("#FFFFFF", "#161513")(props),
-        color: mode("#171717", "#EDEDED")(props),
+        bg: mode("light.50", "dark.600")(props),
+        color: mode("dark.700", "light.200")(props),
       },
       "html *": {
         transition: "color, background-color 0.2s ease-out!important",

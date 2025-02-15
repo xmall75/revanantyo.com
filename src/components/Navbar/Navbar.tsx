@@ -19,6 +19,7 @@ const Navbar = () => {
     ["100% 0px", "100% 8px"],
   );
 
+  const backgroundColor = useColorModeValue("light.50", "dark.600");
   const backgroundImage = useColorModeValue(gradientBrown, gradientMagenta);
 
   return (
@@ -31,7 +32,7 @@ const Navbar = () => {
       width="100%"
       position="fixed"
       zIndex={100}
-      backgroundColor="background"
+      backgroundColor={backgroundColor}
       backgroundImage={backgroundImage}
       style={{
         backgroundSize: backgroundSize,

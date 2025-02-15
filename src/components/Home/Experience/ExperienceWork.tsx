@@ -25,7 +25,14 @@ const ExperienceWork = () => {
         lg: "90vh",
       }}
     >
-      <Box position="relative">
+      <Box
+        position="relative"
+        marginBottom={{
+          base: 1,
+          sm: 3,
+          xl: 5,
+        }}
+      >
         <Text
           zIndex={1}
           fontWeight="semibold"

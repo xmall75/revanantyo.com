@@ -8,6 +8,7 @@ import {
   ModalHeader,
   ModalOverlay,
   Text,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import Image from "next/image";
 import { useState } from "react";
@@ -22,6 +23,8 @@ interface ProjectGalleryProps {
 }
 
 const ProjectGallery = ({ images, isOpen, onClose }: ProjectGalleryProps) => {
+  const backgroundColor = useColorModeValue("dark.600", "light.50");
+
   const [currentImage, setCurrentImage] = useState(0);
 
   const previousImage = () => {
@@ -82,7 +85,7 @@ const ProjectGallery = ({ images, isOpen, onClose }: ProjectGalleryProps) => {
               position="absolute"
               onClick={previousImage}
               cursor={images.length === 1 ? "not-allowed" : "pointer"}
-              background="background"
+              background={backgroundColor}
               left={1}
               zIndex={2}
               display="flex"
@@ -127,7 +130,7 @@ const ProjectGallery = ({ images, isOpen, onClose }: ProjectGalleryProps) => {
               position="absolute"
               onClick={nextImage}
               cursor={images.length === 1 ? "not-allowed" : "pointer"}
-              background="background"
+              background={backgroundColor}
               right={1}
               zIndex={2}
               display="flex"
