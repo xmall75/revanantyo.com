@@ -11,10 +11,10 @@ const Hero = () => {
       width="full"
       minHeight={{
         base: "50vh",
-        md: 600,
-        lg: "100vh",
+        md: 450,
+        xl: "100vh",
       }}
-      justifyContent={{ base: "end", lg: "center" }}
+      justifyContent={{ base: "end", xl: "center" }}
       alignItems="center"
     >
       <HeroMainContent />

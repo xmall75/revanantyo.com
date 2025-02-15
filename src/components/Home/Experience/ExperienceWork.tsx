@@ -12,7 +12,6 @@ const ExperienceWork = () => {
       mt={{
         base: 44,
         sm: 40,
-        lg: 56,
       }}
       display="flex"
       flexDirection="column"
