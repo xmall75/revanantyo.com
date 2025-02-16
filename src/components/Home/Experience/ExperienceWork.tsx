@@ -1,11 +1,13 @@
 import { Box, Text } from "@chakra-ui/react";
 
-import { WorkingExperiences } from "@/constants/working_experiences";
+import { getExperiences } from "@/sanity/services/experience.service";
 
 import ExperienceGeneralInformation from "./ExperienceDetail/ExperienceGeneralInformation";
 import ExperienceJobdesk from "./ExperienceDetail/ExperienceJobdesk";
 
-const ExperienceWork = () => {
+const ExperienceWork = async () => {
+  const experiences = await getExperiences();
+
   return (
     <Box
       id="experience"
@@ -63,7 +65,7 @@ const ExperienceWork = () => {
           EXPERIENCE
         </Text>
       </Box>
-      {WorkingExperiences.map((item, key) => {
+      {experiences.map((item, key) => {
         return (
           <Box
             key={key}

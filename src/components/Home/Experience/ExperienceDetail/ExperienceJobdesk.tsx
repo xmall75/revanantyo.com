@@ -2,10 +2,10 @@
 
 import { ListItem, OrderedList, useColorModeValue } from "@chakra-ui/react";
 
-import { IWorkingExperience } from "@/types/experience";
+import type { IExperienceSchema } from "@/types/experience";
 
 interface ExperienceJobdeskProps {
-  jobdesk: IWorkingExperience["jobdesk"];
+  jobdesk: IExperienceSchema["jobdesk"];
 }
 
 const ExperienceJobdesk = ({ jobdesk }: ExperienceJobdeskProps) => {

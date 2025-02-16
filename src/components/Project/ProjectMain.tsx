@@ -1,6 +1,6 @@
 import { Box, Grid, Text } from "@chakra-ui/react";
 
-import { getProjects } from "@/sanity/utils/project.utils";
+import { getProjects } from "@/sanity/services/project.service";
 
 import ProjectItem from "./ProjectItem";
 
