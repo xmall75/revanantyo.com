@@ -5,6 +5,10 @@ export const projectsQuery = (limit?: number) => {
       name,
       role,
       "slug": slug.current,
+      "thumbnail": thumbnail.asset->{
+        "url": url,
+        alt
+      },
       "images": images[]{ 
         "url": asset->url,
         alt
@@ -17,12 +21,16 @@ export const projectsQuery = (limit?: number) => {
 };
 
 export const projectBySlugQuery = (slug: string) => {
-  return `*[_type == "project" && slug.current == ${slug}][0]{
+  return `*[_type == "project" && slug.current == "${slug}"][0]{
       _id,
       _createdAt,
       name,
       role,
       "slug": slug.current,
+      "thumbnail": thumbnail.asset->{
+        "url": url,
+        alt
+      },
       "images": images[]{ 
         "url": asset->url,
         alt

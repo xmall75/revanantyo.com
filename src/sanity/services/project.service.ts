@@ -1,5 +1,5 @@
 import clientConfig from "../config/client";
-import { projectBySlugQuery, projectsQuery } from "../queries/project.queries";
+import { projectBySlugQuery, projectsQuery } from "../queries/project.query";
 
 import { IProjectSchema } from "@/types/project";
 

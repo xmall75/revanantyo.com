@@ -1,83 +1,44 @@
 "use client";
 
-import { Box, Text, useDisclosure } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import Image from "next/image";
-
-import ProjectGallery from "./ProjectGallery";
 
 import { IProjectSchema } from "@/types/project";
 
 interface ProjectThumbnailProps {
-  imageUrl: string;
-  images: IProjectSchema["images"];
+  thumbnail: IProjectSchema["thumbnail"];
 }
 
-const ProjectThumbnail = ({ imageUrl, images }: ProjectThumbnailProps) => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
+const ProjectThumbnail = ({ thumbnail }: ProjectThumbnailProps) => {
   return (
-    <>
-      <ProjectGallery images={images} isOpen={isOpen} onClose={onClose} />
-      <Box
-        width={{
-          md: 280,
-        }}
-        height={{
-          md: 160,
-        }}
-        alignSelf={{
-          md: "center",
-        }}
-        aspectRatio="16/9"
-        position="relative"
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        cursor="pointer"
-        onClick={onOpen}
-        _after={{
-          content: '""',
-          backgroundColor: "black",
-          width: "full",
-          height: "full",
-          position: "absolute",
-          opacity: 0,
-          transition: "all 0.1s ease-in!important",
-        }}
-        _hover={{
-          _after: {
-            opacity: 0.7,
-          },
-        }}
-      >
-        <Box
-          width="full"
-          height="full"
-          opacity={0}
-          zIndex={1}
-          position="absolute"
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-          _hover={{
-            opacity: 1,
-          }}
-          transition="all 0.1s ease-in!important"
-        >
-          <Text
-            fontSize={{
-              base: "xl",
-              md: "lg",
-            }}
-            fontWeight="semibold"
-            color="white"
-          >
-            View Gallery
-          </Text>
-        </Box>
-        <Image src={imageUrl} className="absolute" fill alt={imageUrl} />
-      </Box>
-    </>
+    <Box
+      width={{
+        base: "full",
+        md: 260,
+        lg: 400,
+      }}
+      height={{
+        base: "auto",
+        md: 200,
+        lg: 300,
+      }}
+      alignSelf={{
+        md: "center",
+      }}
+      aspectRatio="4/3"
+      position="relative"
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+    >
+      <Image
+        src={thumbnail.url}
+        className="absolute"
+        sizes="auto"
+        fill
+        alt={thumbnail.url}
+      />
+    </Box>
   );
 };
 

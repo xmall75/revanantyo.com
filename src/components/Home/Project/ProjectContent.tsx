@@ -4,10 +4,9 @@ import { AppRoute } from "@/constants/app_route";
 import { getProjects } from "@/sanity/services/project.service";
 
 import ProjectDescription from "./ProjectDetail/ProjectDescription";
-import ProjectGeneralInformation from "./ProjectDetail/ProjectGeneralInformation";
 
 const ProjectContent = async () => {
-  const projects = await getProjects();
+  const projects = await getProjects(3);
 
   return (
     <Box
@@ -32,7 +31,7 @@ const ProjectContent = async () => {
     >
       <Box
         mb={{
-          base: 3,
+          base: 5,
           sm: 4,
           md: 5,
           lg: 6,
@@ -66,10 +65,10 @@ const ProjectContent = async () => {
           PROJECT
         </Text>
       </Box>
-      {projects.slice(0, 3).map((project, key) => {
+      {projects.map((project, index) => {
         return (
           <Box
-            key={key}
+            key={index}
             display="flex"
             flexDirection="column"
             width="full"
@@ -81,13 +80,9 @@ const ProjectContent = async () => {
               lg: 7,
             }}
           >
-            <ProjectGeneralInformation project={project} />
             <ProjectDescription
-              slug={project.slug}
-              images={project.images}
-              description={project.shortDescription}
-              github={project.github}
-              url={project.url}
+              project={project}
+              position={index % 2 === 0 ? "left" : "right"}
             />
           </Box>
         );

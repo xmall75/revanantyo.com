@@ -1,20 +1,34 @@
-import { Box, Grid, Text } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 
 import { getProjects } from "@/sanity/services/project.service";
 
-import ProjectItem from "./ProjectItem";
+import ProjectDescription from "../Home/Project/ProjectDetail/ProjectDescription";
 
 const ProjectMain = async () => {
   const projects = await getProjects();
 
   return (
-    <>
+    <Box
+      id="project"
+      display="flex"
+      flexDirection="column"
+      justifyContent="space-between"
+      alignItems="center"
+      position="relative"
+      width="full"
+      gap={{
+        base: 3,
+        sm: 5,
+        md: 7,
+      }}
+      overflow="hidden"
+    >
       <Box
         mb={{
-          base: 10,
-          sm: 8,
-          md: 6,
-          lg: 16,
+          base: 5,
+          sm: 4,
+          md: 5,
+          lg: 6,
         }}
         position="relative"
       >
@@ -31,7 +45,7 @@ const ProjectMain = async () => {
             sm: "6xl",
           }}
           _after={{
-            content: '"PROJECT"',
+            content: '"PROJECTS"',
             zIndex: 0,
             fontSize: {
               base: "7xl",
@@ -42,28 +56,32 @@ const ProjectMain = async () => {
             position: "absolute",
           }}
         >
-          PROJECT
+          PROJECTS
         </Text>
       </Box>
-      <Grid
-        justifyContent="center"
-        alignContent="center"
-        templateColumns={{
-          base: "repeat(1, 1fr)",
-          md: "repeat(2, 1fr)",
-          xl: "repeat(3, 1fr)",
-        }}
-        gap={{
-          base: 4,
-          sm: 3,
-          lg: 5,
-        }}
-      >
-        {projects.map((project, index) => {
-          return <ProjectItem key={index} project={project} />;
-        })}
-      </Grid>
-    </>
+      {projects.map((project, index) => {
+        return (
+          <Box
+            key={index}
+            display="flex"
+            flexDirection="column"
+            width="full"
+            position="relative"
+            mb={{
+              base: 5,
+              sm: 7,
+              md: 6,
+              lg: 7,
+            }}
+          >
+            <ProjectDescription
+              project={project}
+              position={index % 2 === 0 ? "left" : "right"}
+            />
+          </Box>
+        );
+      })}
+    </Box>
   );
 };
 

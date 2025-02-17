@@ -1,5 +1,5 @@
 import clientConfig from "../config/client";
-import { experiencesQuery } from "../queries/experience.queries";
+import { experiencesQuery } from "../queries/experience.query";
 
 import { IExperienceSchema } from "@/types/experience";
 
