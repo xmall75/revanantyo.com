@@ -30,13 +30,15 @@ const ProjectThumbnail = ({ thumbnail }: ProjectThumbnailProps) => {
       display="flex"
       justifyContent="center"
       alignItems="center"
+      borderRadius="md"
     >
       <Image
         src={thumbnail.url}
-        className="absolute"
+        className="absolute rounded-lg"
         sizes="auto"
         fill
         alt={thumbnail.url}
+        loading="lazy"
       />
     </Box>
   );

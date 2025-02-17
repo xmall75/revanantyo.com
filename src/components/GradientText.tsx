@@ -17,7 +17,12 @@ const GradientText = ({
   const color = useColorModeValue(lightModeColor, darkModeColor);
 
   return (
-    <Text bgGradient={color} backgroundClip="text" {...props}>
+    <Text
+      bgGradient={color}
+      backgroundClip="text"
+      width="fit-content"
+      {...props}
+    >
       {text}
     </Text>
   );

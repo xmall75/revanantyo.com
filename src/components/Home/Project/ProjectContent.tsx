@@ -1,5 +1,7 @@
 import { Box, Text } from "@chakra-ui/react";
 
+import ViewMore from "@/components/ViewMore";
+
 import { AppRoute } from "@/constants/app_route";
 import { getProjects } from "@/sanity/services/project.service";
 
@@ -87,18 +89,7 @@ const ProjectContent = async () => {
           </Box>
         );
       })}
-      <Text
-        as="a"
-        href={AppRoute.projectPage}
-        textDecoration="underline"
-        textUnderlineOffset={5}
-        _hover={{
-          opacity: 0.7,
-        }}
-        transition="0.15s ease!important"
-      >
-        View More Projects
-      </Text>
+      <ViewMore url={AppRoute.projectPage} text="View More Projects" />
     </Box>
   );
 };
