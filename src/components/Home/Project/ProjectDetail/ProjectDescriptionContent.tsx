@@ -2,10 +2,8 @@ import { Box, Text } from "@chakra-ui/react";
 import { FaBookOpen, FaGithub, FaGlobe } from "react-icons/fa";
 
 import NavigationButton from "@/components/Button/NavigationButton";
-import GradientText from "@/components/GradientText";
 
 import { AppRoute } from "@/constants/app_route";
-import { gradientBrown, gradientMagenta } from "@/constants/gradient_color";
 
 import type { IProjectSchema } from "@/types/project";
 
@@ -22,19 +20,19 @@ const ProjectDescriptionContent = ({ project }: ProjectDescriptionProps) => {
       justifyContent="space-between"
     >
       <Box>
-        <GradientText
-          text={project.name}
-          lightModeColor={gradientBrown}
-          darkModeColor={gradientMagenta}
-          minHeight={12}
+        <Text
+          minHeight={{
+            base: 12,
+          }}
           fontSize={{
             base: "2xl",
             md: "xl",
             lg: "3xl",
           }}
           fontWeight="bold"
-          transition="0.3s ease!important"
-        />
+        >
+          {project.name}
+        </Text>
         <Text
           fontSize={{
             base: "sm",
