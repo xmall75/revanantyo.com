@@ -9,8 +9,12 @@ const Hero = () => {
       flexDirection="column"
       position="relative"
       width="full"
-      minHeight="100vh"
-      justifyContent="center"
+      minHeight={{
+        base: "50vh",
+        md: 450,
+        xl: "100vh",
+      }}
+      justifyContent={{ base: "end", xl: "center" }}
       alignItems="center"
     >
       <HeroMainContent />

@@ -8,8 +8,12 @@ const ExperienceTechStack = () => {
       display="flex"
       position="relative"
       width="full"
-      height={250}
-      justifyContent="center"
+      minHeight={{
+        base: "40vh",
+        md: 300,
+        xl: "100vh",
+      }}
+      justifyContent={{ base: "start", xl: "center" }}
       alignItems="center"
     >
       <Box

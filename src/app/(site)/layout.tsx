@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
-import "./globals.css";
+import "@/app/globals.css";
 
 import useGetColorMode from "@/hooks/useGetColorMode";
 
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
+import ScrollToTop from "@/components/ScrollToTop";
 
 import { Providers } from "./providers";
 
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body
         className={`${inter.className} overflow-x-hidden chakra-ui-${colorMode}`}
       >
+        <ScrollToTop />
         <Providers colorMode={colorMode}>
           <Navbar />
           {children}

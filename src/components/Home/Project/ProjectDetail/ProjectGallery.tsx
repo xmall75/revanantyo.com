@@ -8,18 +8,23 @@ import {
   ModalHeader,
   ModalOverlay,
   Text,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import Image from "next/image";
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
+import { IProjectSchema } from "@/types/project";
+
 interface ProjectGalleryProps {
-  images: string[];
+  images: IProjectSchema["images"];
   isOpen: boolean;
   onClose: () => void;
 }
 
 const ProjectGallery = ({ images, isOpen, onClose }: ProjectGalleryProps) => {
+  const backgroundColor = useColorModeValue("dark.600", "light.50");
+
   const [currentImage, setCurrentImage] = useState(0);
 
   const previousImage = () => {
@@ -79,8 +84,8 @@ const ProjectGallery = ({ images, isOpen, onClose }: ProjectGalleryProps) => {
               }}
               position="absolute"
               onClick={previousImage}
-              cursor="pointer"
-              background="background"
+              cursor={images.length === 1 ? "not-allowed" : "pointer"}
+              background={backgroundColor}
               left={1}
               zIndex={2}
               display="flex"
@@ -105,9 +110,9 @@ const ProjectGallery = ({ images, isOpen, onClose }: ProjectGalleryProps) => {
                   >
                     <Image
                       fill
-                      src={image}
+                      src={image.url}
                       className="absolute"
-                      alt="gallery-image"
+                      alt={image.alt}
                     />
                   </Box>
                 );
@@ -124,8 +129,8 @@ const ProjectGallery = ({ images, isOpen, onClose }: ProjectGalleryProps) => {
               }}
               position="absolute"
               onClick={nextImage}
-              cursor="pointer"
-              background="background"
+              cursor={images.length === 1 ? "not-allowed" : "pointer"}
+              background={backgroundColor}
               right={1}
               zIndex={2}
               display="flex"
@@ -139,6 +144,9 @@ const ProjectGallery = ({ images, isOpen, onClose }: ProjectGalleryProps) => {
               />
             </Box>
           </Box>
+          <Text textAlign="center">
+            {currentImage + 1} / {images.length}
+          </Text>
         </ModalBody>
       </ModalContent>
     </Modal>

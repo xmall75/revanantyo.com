@@ -1,14 +1,15 @@
-import { IconType } from "react-icons";
+import { PortableTextBlock } from "sanity";
 
-export interface IListProject {
-  title: string;
+export interface IProjectSchema {
+  _id: string;
+  _createdAt: Date;
+  name: string;
   role: string;
-  date: string;
-  description: string;
-  links: {
-    title: string;
-    url: string;
-    icon: IconType;
-  }[];
-  images: string[];
+  slug: string;
+  thumbnail: { url: string; alt: string };
+  images: { url: string; alt: string }[];
+  url: string;
+  github: string;
+  shortDescription: string;
+  content: PortableTextBlock[];
 }

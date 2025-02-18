@@ -1,11 +1,15 @@
 import { Box, Text } from "@chakra-ui/react";
 
-import { ListProject } from "@/constants/project";
+import ViewMore from "@/components/ViewMore";
+
+import { AppRoute } from "@/constants/app_route";
+import { getProjects } from "@/sanity/services/project.service";
 
 import ProjectDescription from "./ProjectDetail/ProjectDescription";
-import ProjectGeneralInformation from "./ProjectDetail/ProjectGeneralInformation";
 
-const ProjectContent = () => {
+const ProjectContent = async () => {
+  const projects = await getProjects(3);
+
   return (
     <Box
       id="project"
@@ -20,11 +24,6 @@ const ProjectContent = () => {
       alignItems="center"
       position="relative"
       width="full"
-      minHeight={{
-        base: "160vh",
-        sm: "180vh",
-        md: "100vh",
-      }}
       gap={{
         base: 3,
         sm: 5,
@@ -34,7 +33,7 @@ const ProjectContent = () => {
     >
       <Box
         mb={{
-          base: 3,
+          base: 5,
           sm: 4,
           md: 5,
           lg: 6,
@@ -68,10 +67,10 @@ const ProjectContent = () => {
           PROJECT
         </Text>
       </Box>
-      {ListProject.map((item, key) => {
+      {projects.map((project, index) => {
         return (
           <Box
-            key={key}
+            key={index}
             display="flex"
             flexDirection="column"
             width="full"
@@ -83,15 +82,14 @@ const ProjectContent = () => {
               lg: 7,
             }}
           >
-            <ProjectGeneralInformation project={item} />
             <ProjectDescription
-              images={item.images}
-              description={item.description}
-              links={item.links}
+              project={project}
+              position={index % 2 === 0 ? "left" : "right"}
             />
           </Box>
         );
       })}
+      <ViewMore url={AppRoute.projectPage} text="View More Projects" />
     </Box>
   );
 };

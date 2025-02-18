@@ -1,23 +1,18 @@
 import { Box, Text } from "@chakra-ui/react";
 
-import { getExperiences } from "@/sanity/services/experience.service";
+import { getProjects } from "@/sanity/services/project.service";
 
-import ExperienceGeneralInformation from "./ExperienceDetail/ExperienceGeneralInformation";
-import ExperienceJobdesk from "./ExperienceDetail/ExperienceJobdesk";
+import ProjectDescription from "../Home/Project/ProjectDetail/ProjectDescription";
 
-const ExperienceWork = async () => {
-  const experiences = await getExperiences();
+const ProjectMain = async () => {
+  const projects = await getProjects();
 
   return (
     <Box
-      id="experience"
-      mt={{
-        base: 44,
-        sm: 40,
-      }}
+      id="project"
       display="flex"
       flexDirection="column"
-      justifyContent="start"
+      justifyContent="space-between"
       alignItems="center"
       position="relative"
       width="full"
@@ -26,15 +21,16 @@ const ExperienceWork = async () => {
         sm: 5,
         md: 7,
       }}
+      overflow="hidden"
     >
       <Box
-        position="relative"
         mb={{
-          base: 3,
+          base: 5,
           sm: 4,
           md: 5,
           lg: 6,
         }}
+        position="relative"
       >
         <Text
           zIndex={1}
@@ -46,40 +42,42 @@ const ExperienceWork = async () => {
           justifyContent="center"
           fontSize={{
             base: "4xl",
-            sm: "5xl",
-            md: "6xl",
+            sm: "6xl",
           }}
           _after={{
-            content: '"EXPERIENCE"',
+            content: '"PROJECTS"',
             zIndex: 0,
             fontSize: {
-              base: "6xl",
-              sm: "7xl",
-              md: "8xl",
+              base: "7xl",
+              sm: "8xl",
               lg: "9xl",
             },
             opacity: 0.1,
             position: "absolute",
           }}
         >
-          EXPERIENCE
+          PROJECTS
         </Text>
       </Box>
-      {experiences.map((item, key) => {
+      {projects.map((project, index) => {
         return (
           <Box
-            key={key}
+            key={index}
             display="flex"
             flexDirection="column"
             width="full"
-            px={{
-              lg: 8,
-              xl: 16,
-            }}
             position="relative"
+            mb={{
+              base: 5,
+              sm: 7,
+              md: 6,
+              lg: 7,
+            }}
           >
-            <ExperienceGeneralInformation experience={item} />
-            <ExperienceJobdesk jobdesk={item.jobdesk} />
+            <ProjectDescription
+              project={project}
+              position={index % 2 === 0 ? "left" : "right"}
+            />
           </Box>
         );
       })}
@@ -87,4 +85,4 @@ const ExperienceWork = async () => {
   );
 };
 
-export default ExperienceWork;
+export default ProjectMain;

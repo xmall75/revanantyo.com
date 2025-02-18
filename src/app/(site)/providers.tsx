@@ -1,6 +1,10 @@
 "use client";
 
-import { ChakraProvider, cookieStorageManager } from "@chakra-ui/react";
+import {
+  ChakraProvider,
+  cookieStorageManager,
+  StyleFunctionProps,
+} from "@chakra-ui/react";
 
 import theme from "@/utils/theme";
 
@@ -9,7 +13,7 @@ export function Providers({
   colorMode,
 }: Readonly<{
   children: React.ReactNode;
-  colorMode: "light" | "dark";
+  colorMode: StyleFunctionProps["colorMode"];
 }>) {
   return (
     <ChakraProvider

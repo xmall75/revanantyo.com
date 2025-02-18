@@ -7,6 +7,7 @@ import { SocialMedia } from "@/constants/social_media";
 
 const Footer = () => {
   const iconColor = useColorModeValue("brownPrimary.700", "blueAccent.500");
+  const backgroundColor = useColorModeValue("light.50", "dark.600");
 
   const listContact = SocialMedia.filter(
     (social) => social.title.toLowerCase() !== "resume",
@@ -19,7 +20,7 @@ const Footer = () => {
   });
 
   return (
-    <Box width="full" zIndex={2} backgroundColor="background">
+    <Box width="full" zIndex={2} backgroundColor={backgroundColor}>
       <Divider
         mt={{
           base: 5,
