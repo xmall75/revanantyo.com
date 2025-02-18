@@ -1,31 +1,41 @@
 import { Box, Text } from "@chakra-ui/react";
 
-import { WorkingExperiences } from "@/constants/working_experiences";
+import { getExperiences } from "@/sanity/services/experience.service";
 
 import ExperienceGeneralInformation from "./ExperienceDetail/ExperienceGeneralInformation";
 import ExperienceJobdesk from "./ExperienceDetail/ExperienceJobdesk";
 
-const ExperienceWork = () => {
+const ExperienceWork = async () => {
+  const experiences = await getExperiences();
+
   return (
     <Box
       id="experience"
       mt={{
         base: 44,
         sm: 40,
-        lg: 56,
       }}
       display="flex"
       flexDirection="column"
-      justifyContent="space-between"
+      justifyContent="start"
       alignItems="center"
       position="relative"
       width="full"
-      height={{
-        base: "85vh",
-        lg: "90vh",
+      gap={{
+        base: 3,
+        sm: 5,
+        md: 7,
       }}
     >
-      <Box position="relative">
+      <Box
+        position="relative"
+        mb={{
+          base: 3,
+          sm: 4,
+          md: 5,
+          lg: 6,
+        }}
+      >
         <Text
           zIndex={1}
           fontWeight="semibold"
@@ -55,7 +65,7 @@ const ExperienceWork = () => {
           EXPERIENCE
         </Text>
       </Box>
-      {WorkingExperiences.map((item, key) => {
+      {experiences.map((item, key) => {
         return (
           <Box
             key={key}

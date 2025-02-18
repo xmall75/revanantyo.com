@@ -20,6 +20,19 @@ const projectSchema = {
       options: { source: "name" },
     },
     {
+      name: "thumbnail", // Changed from 'image' to 'images'
+      title: "Thumbnail",
+      type: "image",
+      options: { hotspot: true },
+      fields: [
+        {
+          name: "alt",
+          title: "Alt",
+          type: "string",
+        },
+      ],
+    },
+    {
       name: "images", // Changed from 'image' to 'images'
       title: "Images",
       type: "array",

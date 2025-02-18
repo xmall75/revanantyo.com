@@ -6,6 +6,7 @@ export interface IProjectSchema {
   name: string;
   role: string;
   slug: string;
+  thumbnail: { url: string; alt: string };
   images: { url: string; alt: string }[];
   url: string;
   github: string;

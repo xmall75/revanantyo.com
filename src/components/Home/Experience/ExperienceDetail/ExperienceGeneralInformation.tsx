@@ -1,15 +1,27 @@
 import { Box, Text } from "@chakra-ui/react";
 import { GoDotFill } from "react-icons/go";
 
-import { IWorkingExperience } from "@/types/experience";
+import { MonthNames } from "@/constants/common";
+
+import type { IExperienceSchema } from "@/types/experience";
 
 interface ExperienceGeneralInformationProps {
-  experience: IWorkingExperience;
+  experience: IExperienceSchema;
 }
 
 const ExperienceGeneralInformation = ({
   experience,
 }: ExperienceGeneralInformationProps) => {
+  const splittedStartDate = experience.startDate.split("-");
+  const splittedEndDate =
+    experience.endDate != null ? experience.endDate.split("-") : "";
+
+  const start_date =
+    MonthNames[Number(splittedStartDate[1]) - 1] + " " + splittedStartDate[0];
+  const end_date = experience.stillWorking
+    ? "Present"
+    : MonthNames[Number(splittedEndDate[1]) - 1] + " " + splittedEndDate[0];
+
   return (
     <>
       <Box width="full" mb={1}>
@@ -34,7 +46,7 @@ const ExperienceGeneralInformation = ({
         height={{
           lg: 18,
         }}
-        color="light.500"
+        color="light.700"
         fontSize={{
           base: "xs",
           md: "sm",
@@ -47,7 +59,9 @@ const ExperienceGeneralInformation = ({
         <Text>{experience.type},</Text>
         <Text>{experience.role}</Text>
         <GoDotFill size={10} />
-        <Text>{experience.date}</Text>
+        <Text>
+          {start_date} - {end_date}
+        </Text>
       </Box>
     </>
   );

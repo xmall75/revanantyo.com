@@ -5,4 +5,4 @@ export const gradientBlue =
   "linear-gradient(to right, bluePrimary.200, bluePrimary.700, purplePrimary.100)";
 
 export const gradientMagenta =
-  "linear-gradient(to right, blueAccent.300, blueAccent.500, pinkPrimary.500)";
+  "linear-gradient(to right, blueAccent.500, blueAccent.300, pinkPrimary.500)";

@@ -33,6 +33,7 @@ const customComponents: Partial<PortableTextReactComponents> = {
             className="absolute"
             src={imageBuilder(value).url()}
             alt="Project Image"
+            sizes="auto"
             fill
           />
         </Box>
@@ -117,8 +118,36 @@ const customComponents: Partial<PortableTextReactComponents> = {
     },
   },
   list: {
-    bullet: ({ children }) => <UnorderedList mt="xl">{children}</UnorderedList>,
-    number: ({ children }) => <OrderedList mt="lg">{children}</OrderedList>,
+    bullet: ({ children }) => (
+      <UnorderedList
+        ml={{
+          base: 5,
+          lg: 7,
+          xl: 10,
+        }}
+        mt={{
+          base: 3,
+          lg: 5,
+        }}
+      >
+        {children}
+      </UnorderedList>
+    ),
+    number: ({ children }) => (
+      <OrderedList
+        ml={{
+          base: 5,
+          lg: 7,
+          xl: 10,
+        }}
+        mt={{
+          base: 3,
+          lg: 5,
+        }}
+      >
+        {children}
+      </OrderedList>
+    ),
   },
 };
 
