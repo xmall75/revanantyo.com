@@ -27,7 +27,7 @@ const ProjectDescriptionContent = ({ project }: ProjectDescriptionProps) => {
           fontSize={{
             base: "2xl",
             md: "xl",
-            lg: "3xl",
+            xl: "3xl",
           }}
           fontWeight="bold"
         >
@@ -43,6 +43,11 @@ const ProjectDescriptionContent = ({ project }: ProjectDescriptionProps) => {
             md: 2,
             lg: 5,
           }}
+          noOfLines={{
+            base: 3,
+            md: 2,
+            xl: 0,
+          }}
         >
           {project.shortDescription}
         </Text>
@@ -53,6 +58,7 @@ const ProjectDescriptionContent = ({ project }: ProjectDescriptionProps) => {
           sm: 14,
         }}
         display="flex"
+        flexWrap="wrap"
         gap={2}
       >
         <NavigationButton

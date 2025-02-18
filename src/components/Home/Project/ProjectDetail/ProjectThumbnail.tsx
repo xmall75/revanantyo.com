@@ -15,12 +15,12 @@ const ProjectThumbnail = ({ thumbnail }: ProjectThumbnailProps) => {
       width={{
         base: "full",
         md: 260,
-        lg: 400,
+        xl: 400,
       }}
       height={{
         base: "auto",
         md: 200,
-        lg: 300,
+        xl: 300,
       }}
       alignSelf={{
         md: "center",

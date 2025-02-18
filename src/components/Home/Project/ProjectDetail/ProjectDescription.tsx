@@ -27,6 +27,7 @@ const ProjectDescription = ({ project, position }: ProjectDescriptionProps) => {
         sm: 3,
         md: 4,
         lg: 5,
+        xl: 10,
       }}
     >
       <ProjectThumbnail thumbnail={project.thumbnail} />

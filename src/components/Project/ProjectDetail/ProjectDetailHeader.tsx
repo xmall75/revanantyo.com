@@ -3,25 +3,19 @@
 import { Box, Text } from "@chakra-ui/react";
 import Image from "next/image";
 
-import { FormatDate } from "@/constants/common";
-
 import { IProjectSchema } from "@/types/project";
 
 interface ProjectDetailHeaderProps {
   title: IProjectSchema["name"];
-  thumbnail: IProjectSchema["images"];
+  thumbnail: IProjectSchema["thumbnail"];
   shortDescription: IProjectSchema["shortDescription"];
-  date: IProjectSchema["_createdAt"];
 }
 
 const ProjectDetailHeader = ({
   title,
   thumbnail,
   shortDescription,
-  date,
 }: ProjectDetailHeaderProps) => {
-  const createdAt = new Date(date);
-
   return (
     <Box display="flex" flexDirection="column" gap={3}>
       <Text
@@ -51,26 +45,13 @@ const ProjectDetailHeader = ({
       >
         {shortDescription}
       </Text>
-      <Text
-        fontSize={{
-          base: "xs",
-          lg: "sm",
-        }}
-        _dark={{
-          color: "light.700",
-        }}
-        _light={{
-          color: "dark.300",
-        }}
-      >
-        {FormatDate(createdAt)}
-      </Text>
       <Box position="relative" aspectRatio="16/9" width="full">
         <Image
           className="absolute"
+          sizes="auto"
           fill
-          src={thumbnail[0].url}
-          alt={thumbnail[0].alt}
+          src={thumbnail.url}
+          alt={thumbnail.alt}
         />
       </Box>
     </Box>

@@ -31,9 +31,8 @@ const ProjectDetailPage = async ({
     >
       <ProjectDetailHeader
         title={project.name}
-        thumbnail={project.images}
+        thumbnail={project.thumbnail}
         shortDescription={project.shortDescription}
-        date={project._createdAt}
       />
       <ProjectDetailContent
         content={project.content}

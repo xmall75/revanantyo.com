@@ -1,6 +1,7 @@
-import { Box, Button, Text } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import { FaGithub, FaGlobe } from "react-icons/fa";
 
+import NavigationButton from "@/components/Button/NavigationButton";
 import CustomPortableText from "@/components/CustomPortableText";
 
 import { IProjectSchema } from "@/types/project";
@@ -19,9 +20,15 @@ const ProjectDetailContent = ({
   return (
     <Box
       my={{
-        base: 3,
-        lg: 5,
+        base: 5,
+        lg: 7,
+        xl: 10,
       }}
+      maxWidth={{
+        lg: "90%",
+        xl: "80%",
+      }}
+      textAlign="justify"
     >
       <CustomPortableText content={content} />
       {(github || url) && (
@@ -34,46 +41,36 @@ const ProjectDetailContent = ({
           gap={2}
         >
           {github && (
-            <Button
-              as="a"
-              href={github}
-              target="_blank"
-              display="flex"
-              justifyContent="center"
-              alignItems="center"
-              gap={2}
-            >
-              <FaGithub />
-              <Text
-                display={{
+            <NavigationButton
+              url={github}
+              text="Github"
+              icon={<FaGithub />}
+              buttonProps={{
+                target: "_blank",
+              }}
+              textProps={{
+                display: {
                   base: "none",
                   md: "inline",
-                }}
-              >
-                Github
-              </Text>
-            </Button>
+                },
+              }}
+            />
           )}
           {url && (
-            <Button
-              as="a"
-              href={url}
-              target="_blank"
-              display="flex"
-              justifyContent="center"
-              alignItems="center"
-              gap={2}
-            >
-              <FaGlobe />
-              <Text
-                display={{
+            <NavigationButton
+              url={url}
+              text="Website"
+              icon={<FaGlobe />}
+              buttonProps={{
+                target: "_blank",
+              }}
+              textProps={{
+                display: {
                   base: "none",
                   md: "inline",
-                }}
-              >
-                Website
-              </Text>
-            </Button>
+                },
+              }}
+            />
           )}
         </Box>
       )}
