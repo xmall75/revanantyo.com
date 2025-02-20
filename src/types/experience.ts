@@ -4,6 +4,7 @@ export interface IExperienceSchema {
   company: string;
   role: string;
   type: string;
+  location: string;
   startDate: string;
   endDate: string | null;
   stillWorking: boolean;
