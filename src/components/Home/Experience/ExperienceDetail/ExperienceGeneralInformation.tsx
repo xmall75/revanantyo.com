@@ -1,4 +1,4 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Show, Text } from "@chakra-ui/react";
 import { GoDotFill } from "react-icons/go";
 
 import { MonthNames } from "@/constants/common";
@@ -24,7 +24,13 @@ const ExperienceGeneralInformation = ({
 
   return (
     <>
-      <Box width="full" mb={1}>
+      <Box
+        display="flex"
+        justifyContent="space-between"
+        alignItems="center"
+        width="full"
+        mb={1}
+      >
         <Text
           fontSize={{
             base: 20,
@@ -36,12 +42,27 @@ const ExperienceGeneralInformation = ({
         >
           {experience.company}
         </Text>
+        <Text
+          display={{
+            base: "none",
+            md: "inline",
+          }}
+        >
+          {start_date} - {end_date}
+        </Text>
       </Box>
       <Box
         display="flex"
-        justifyContent="start"
-        alignItems="center"
-        gap={2}
+        flexDirection={{
+          base: "column",
+          md: "row",
+        }}
+        justifyContent={{ md: "start" }}
+        alignItems={{ md: "center" }}
+        gap={{
+          base: 1,
+          md: 2,
+        }}
         width="full"
         height={{
           lg: 18,
@@ -56,10 +77,20 @@ const ExperienceGeneralInformation = ({
           md: 8,
         }}
       >
-        <Text>{experience.type},</Text>
-        <Text>{experience.role}</Text>
-        <GoDotFill size={10} />
-        <Text>
+        <Box>
+          <Text as="span">{experience.type}, </Text>
+          <Text as="span">{experience.role}</Text>
+        </Box>
+        <Show above="md">
+          <GoDotFill size={10} />
+        </Show>
+        <Text>{experience.location}</Text>
+        <Text
+          display={{
+            base: "inline",
+            md: "none",
+          }}
+        >
           {start_date} - {end_date}
         </Text>
       </Box>
