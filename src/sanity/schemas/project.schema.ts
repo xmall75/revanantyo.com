@@ -20,7 +20,7 @@ const projectSchema = {
       options: { source: "name" },
     },
     {
-      name: "thumbnail", // Changed from 'image' to 'images'
+      name: "thumbnail",
       title: "Thumbnail",
       type: "image",
       options: { hotspot: true },
@@ -33,7 +33,7 @@ const projectSchema = {
       ],
     },
     {
-      name: "images", // Changed from 'image' to 'images'
+      name: "images",
       title: "Images",
       type: "array",
       of: [
