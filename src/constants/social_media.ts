@@ -1,10 +1,12 @@
 import { FaGithub, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { FaNewspaper } from "react-icons/fa6";
 
+import { AppRoute } from "./app_route";
+
 export const SocialMedia = [
   {
     title: "Resume",
-    url: "https://drive.google.com/file/d/1nFao1B1bp5WI0Z935I-kS1g6anVmTPRA/",
+    url: AppRoute.resume,
     icon: FaNewspaper,
   },
   {
