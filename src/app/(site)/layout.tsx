@@ -15,8 +15,31 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Revanantyo Dwigantara",
-  description:
-    "A Frontend Engineer with a year of experience specializing in React and Next.js.",
+  description: "A Software Engineer specializing in React and Next.js.",
+  keywords: ["revanantyo", "dwigantara", "revanantyo dwigantara"],
+  authors: [{ name: "Revanantyo Dwigantara" }],
+  metadataBase: new URL("https://revanantyo.com"),
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://revanantyo.com",
+    title: "Revanantyo Dwigantara",
+    description: "A Software Engineer specializing in React and Next.js.",
+    siteName: "Revanantyo Dwigantara",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Revanantyo Dwigantara",
+    description: "A Software Engineer specializing in React and Next.js.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
 };
 
 export default function RootLayout({

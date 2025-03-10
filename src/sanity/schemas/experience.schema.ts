@@ -14,6 +14,11 @@ const experienceSchema = {
       type: "string",
     },
     {
+      name: "location",
+      title: "Location",
+      type: "string",
+    },
+    {
       name: "type",
       title: "Employment Type",
       type: "string",

@@ -4,6 +4,7 @@ export const experiencesQuery = (limit?: number) => {
     _createdAt,
     company,
     role,
+    location,
     type,
     startDate,
     endDate,
