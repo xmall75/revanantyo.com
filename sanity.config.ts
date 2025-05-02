@@ -1,5 +1,7 @@
 import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
+import { markdownSchema } from "sanity-plugin-markdown/next";
+import { media } from "sanity-plugin-media";
 
 import {
   sanityApiVersion,
@@ -16,7 +18,7 @@ const config = defineConfig({
   title: sanityTitle,
   apiVersion: sanityApiVersion,
   basePath: sanityBasePath,
-  plugins: [structureTool()],
+  plugins: [structureTool(), markdownSchema(), media()],
   schema: { types: schemas },
 });
 

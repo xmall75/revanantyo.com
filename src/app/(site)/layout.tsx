@@ -34,10 +34,10 @@ export const metadata: Metadata = {
   },
   robots: {
     index: true,
-    follow: true,
+    follow: false,
     googleBot: {
       index: true,
-      follow: true,
+      follow: false,
     },
   },
 };
