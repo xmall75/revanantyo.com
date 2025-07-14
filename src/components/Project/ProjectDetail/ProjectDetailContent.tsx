@@ -4,7 +4,7 @@ import { FaGithub, FaGlobe } from "react-icons/fa";
 import NavigationButton from "@/components/Button/NavigationButton";
 import CustomPortableText from "@/components/CustomPortableText";
 
-import { IProjectSchema } from "@/types/project";
+import { IProjectSchema } from "@/types/project.type";
 
 interface ProjectDetailContentProps {
   content: IProjectSchema["content"];

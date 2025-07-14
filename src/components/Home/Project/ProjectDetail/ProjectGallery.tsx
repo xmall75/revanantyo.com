@@ -14,7 +14,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-import { IProjectSchema } from "@/types/project";
+import { IProjectSchema } from "@/types/project.type";
 
 interface ProjectGalleryProps {
   images: IProjectSchema["images"];

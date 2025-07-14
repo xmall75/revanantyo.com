@@ -4,7 +4,7 @@ import { FaGithub, FaGlobe } from "react-icons/fa";
 
 import { AppRoute } from "@/constants/app_route";
 
-import { IProjectSchema } from "@/types/project";
+import { IProjectSchema } from "@/types/project.type";
 
 interface ProjectItemProps {
   project: IProjectSchema;

@@ -3,7 +3,7 @@ import { Box } from "@chakra-ui/react";
 import ProjectDescriptionContent from "./ProjectDescriptionContent";
 import ProjectThumbnail from "./ProjectThumbnail";
 
-import type { IProjectSchema } from "@/types/project";
+import type { IProjectSchema } from "@/types/project.type";
 
 interface ProjectDescriptionProps {
   project: IProjectSchema;
