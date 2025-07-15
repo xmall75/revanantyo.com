@@ -12,6 +12,9 @@ const techStackSchema = {
       name: "icon",
       title: "Icon",
       type: "iconPicker",
+      options: {
+        outputFormat: "react",
+      },
     },
   ],
 };

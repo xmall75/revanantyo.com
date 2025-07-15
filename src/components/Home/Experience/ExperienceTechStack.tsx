@@ -1,8 +1,11 @@
 import { Box, Text, Tooltip } from "@chakra-ui/react";
 
-import { TechStack } from "@/constants/tech_stack";
+import { getTechStacks } from "@/sanity/services/techStack.service";
+import { getIconComponent } from "@/utils/getIconComponent";
 
-const ExperienceTechStack = () => {
+const ExperienceTechStack = async () => {
+  const techStacks = await getTechStacks();
+
   return (
     <Box
       display="flex"
@@ -58,21 +61,30 @@ const ExperienceTechStack = () => {
         position="relative"
         zIndex={0}
       >
-        {TechStack.map((item, key) => {
+        {techStacks.map((item, key) => {
+          const RenderIconComponent = getIconComponent(
+            item.icon.name,
+            item.icon.provider,
+          );
+
+          if (!RenderIconComponent) {
+            return null;
+          }
+
           return (
-            <Box
-              key={key}
-              boxSize={{
-                base: 42,
-                sm: 70,
-                lg: 82,
-              }}
-              overflow="hidden"
-            >
-              <Tooltip label={item.title}>
-                <item.icon className="w-full h-full object-cover" />
-              </Tooltip>
-            </Box>
+            <Tooltip key={key} label={item.name}>
+              <Box
+                key={key}
+                boxSize={{
+                  base: 42,
+                  sm: 70,
+                  lg: 82,
+                }}
+                overflow="hidden"
+              >
+                <RenderIconComponent className="w-full h-full object-cover" />
+              </Box>
+            </Tooltip>
           );
         })}
       </Box>
