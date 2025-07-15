@@ -74,7 +74,6 @@ const ExperienceTechStack = async () => {
           return (
             <Tooltip key={key} label={item.name}>
               <Box
-                key={key}
                 boxSize={{
                   base: 42,
                   sm: 70,
