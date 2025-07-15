@@ -5,7 +5,7 @@ import NavigationButton from "@/components/Button/NavigationButton";
 
 import { AppRoute } from "@/constants/app_route";
 
-import type { IProjectSchema } from "@/types/project";
+import type { IProjectSchema } from "@/types/project.type";
 
 interface ProjectDescriptionProps {
   project: IProjectSchema;

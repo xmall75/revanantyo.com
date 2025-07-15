@@ -1,5 +1,6 @@
 import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
+import { iconPicker } from "sanity-plugin-icon-picker";
 import { markdownSchema } from "sanity-plugin-markdown/next";
 import { media } from "sanity-plugin-media";
 
@@ -18,7 +19,7 @@ const config = defineConfig({
   title: sanityTitle,
   apiVersion: sanityApiVersion,
   basePath: sanityBasePath,
-  plugins: [structureTool(), markdownSchema(), media()],
+  plugins: [structureTool(), markdownSchema(), iconPicker(), media()],
   schema: { types: schemas },
 });
 

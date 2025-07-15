@@ -1,7 +1,7 @@
 import clientConfig from "../config/client";
 import { projectBySlugQuery, projectsQuery } from "../queries/project.query";
 
-import { IProjectSchema } from "@/types/project";
+import { IProjectSchema } from "@/types/project.type";
 
 export const getProjects = async (
   limit?: number,

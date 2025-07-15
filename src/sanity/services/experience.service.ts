@@ -1,7 +1,7 @@
 import clientConfig from "../config/client";
 import { experiencesQuery } from "../queries/experience.query";
 
-import { IExperienceSchema } from "@/types/experience";
+import { IExperienceSchema } from "@/types/experience.type";
 
 export const getExperiences = async (
   limit?: number,

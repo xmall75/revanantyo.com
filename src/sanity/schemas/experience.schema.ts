@@ -9,6 +9,11 @@ const experienceSchema = {
       type: "string",
     },
     {
+      name: "order",
+      title: "Order",
+      type: "number",
+    },
+    {
       name: "role",
       title: "Role",
       type: "string",

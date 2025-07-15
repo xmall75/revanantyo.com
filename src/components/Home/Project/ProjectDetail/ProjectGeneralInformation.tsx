@@ -1,6 +1,6 @@
 import { Box, Text } from "@chakra-ui/react";
 
-import { IProjectSchema } from "@/types/project";
+import { IProjectSchema } from "@/types/project.type";
 
 interface ProjectGeneralInformationProps {
   project: IProjectSchema;

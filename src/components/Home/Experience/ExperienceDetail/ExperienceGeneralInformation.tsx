@@ -3,7 +3,7 @@ import { GoDotFill } from "react-icons/go";
 
 import { MonthNames } from "@/constants/common";
 
-import type { IExperienceSchema } from "@/types/experience";
+import type { IExperienceSchema } from "@/types/experience.type";
 
 interface ExperienceGeneralInformationProps {
   experience: IExperienceSchema;
