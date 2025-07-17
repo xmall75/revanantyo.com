@@ -1,6 +1,6 @@
 export interface ICommonDataSchema {
-  _id: string;
-  _createdAt: Date;
+  _id?: string;
+  _createdAt?: Date;
   name: string;
   icon: {
     _type: string;

@@ -1,26 +1,24 @@
-"use client";
+import { Box, Divider, Flex, Text } from "@chakra-ui/react";
 
-import { Box, Divider, Flex, Text, useColorModeValue } from "@chakra-ui/react";
-import { IoMail } from "react-icons/io5";
+import { getCommonData } from "@/sanity/services/common.service";
 
-import { SocialMedia } from "@/constants/social_media";
+import FooterLink from "./FooterLink";
 
-const Footer = () => {
-  const iconColor = useColorModeValue("brownPrimary.700", "blueAccent.500");
-  const backgroundColor = useColorModeValue("light.50", "dark.600");
+const Footer = async () => {
+  const commonData = await getCommonData();
 
-  const listContact = SocialMedia.filter(
-    (social) => social.title.toLowerCase() !== "resume",
-  );
-
-  listContact.push({
-    title: "Email",
+  commonData.push({
+    name: "Email",
+    icon: {
+      _type: "icon",
+      name: "MdMail",
+      provider: "md",
+    },
     url: "mailto:revanandwi@gmail.com",
-    icon: IoMail,
   });
 
   return (
-    <Box width="full" zIndex={2} backgroundColor={backgroundColor}>
+    <Box width="full" zIndex={2} backgroundColor="transparent">
       <Divider
         mt={{
           base: 5,
@@ -49,43 +47,15 @@ const Footer = () => {
         justifyContent="space-between"
         alignItems="center"
       >
-        <Text>&copy; {new Date().getFullYear()} revanantyo.com</Text>
-        <Box
-          display="flex"
-          flexDirection="row-reverse"
-          justifyContent="center"
-          alignItems="center"
-          flexWrap="wrap"
-          columnGap={{
-            base: 3,
-            md: 4,
-            lg: 3,
+        <Text
+          fontSize={{
+            base: "xs",
+            sm: "md",
           }}
-          position="relative"
-          zIndex={0}
         >
-          {listContact.map((item, key) => {
-            return (
-              <Box
-                key={key}
-                as="a"
-                href={item.url}
-                boxSize={{
-                  base: 21,
-                  sm: 25,
-                  lg: 27,
-                }}
-                overflow="hidden"
-                _hover={{
-                  color: iconColor,
-                }}
-                transition="color 0.1s ease!important"
-              >
-                <item.icon className="w-full h-full object-cover" />
-              </Box>
-            );
-          })}
-        </Box>
+          &copy; {new Date().getFullYear()} revanantyo.com
+        </Text>
+        <FooterLink data={commonData} />
       </Flex>
     </Box>
   );
