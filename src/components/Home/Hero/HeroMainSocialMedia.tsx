@@ -1,11 +1,11 @@
-"use client";
+import { Box, Divider } from "@chakra-ui/react";
 
-import { Box, Divider, Grid, useColorModeValue } from "@chakra-ui/react";
+import { getCommonData } from "@/sanity/services/common.service";
 
-import { SocialMedia } from "@/constants/social_media";
+import HeroMainSocialMediaGrid from "./HeroMainSocialMediaGrid";
 
-const HeroMainSocialMedia = () => {
-  const color = useColorModeValue("brownPrimary.700", "blueAccent.500");
+const HeroMainSocialMedia = async () => {
+  const commonData = await getCommonData();
 
   return (
     <Box display="flex" justifyContent="center" alignItems="center" gap={6}>
@@ -16,37 +16,7 @@ const HeroMainSocialMedia = () => {
           sm: "inline",
         }}
       />
-      <Grid
-        templateColumns="repeat(4, 1fr)"
-        justifyContent="center"
-        alignContent="center"
-        gap={{
-          base: 3,
-          sm: 4,
-        }}
-      >
-        {SocialMedia.map((social, key) => {
-          return (
-            <Box
-              key={key}
-              as="a"
-              href={social.url}
-              target="_blank"
-              display="flex"
-              alignItems="center"
-              justifyContent="center"
-              gap={2}
-              _hover={{
-                color: color,
-              }}
-              transition="color 0.1s ease!important"
-            >
-              <social.icon />
-              {social.title}
-            </Box>
-          );
-        })}
-      </Grid>
+      <HeroMainSocialMediaGrid data={commonData} />
     </Box>
   );
 };
