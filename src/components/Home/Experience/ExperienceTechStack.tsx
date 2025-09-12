@@ -58,6 +58,10 @@ const ExperienceTechStack = async () => {
           lg: 5,
           xl: 8,
         }}
+        rowGap={{
+          base: 2,
+          sm: 4,
+        }}
         position="relative"
         zIndex={0}
       >
